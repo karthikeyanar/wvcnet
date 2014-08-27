@@ -1,0 +1,9 @@
+﻿ #wizard > .progress {
+	margin-top:10px;	
+	margin-bottom:10px;
+ }
+ #wizard > .tab-content:before {
+ 	content:"";
+ 	clear:both;
+ 	display:table;
+ }

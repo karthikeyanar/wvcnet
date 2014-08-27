@@ -1,0 +1,122 @@
+﻿.timeline {
+	margin: 0 0 30px 0;
+	padding: 0;
+	list-style: none;
+}
+.timeline:before {
+	background: none repeat scroll 0 0 #DDDDDD;
+	border: 1px solid #EEEEEE;
+	bottom: 0;
+	content: "";
+	left: 105px;
+	margin: 0 0 0 10px;
+	position: absolute;
+	top: 0;
+	width: 5px;
+}
+.timeline > li {
+	position: relative;
+	margin-bottom: 15px;
+}
+.timeline > li:before, .timeline > li:after {
+	display: table;
+	content: " ";
+}
+.timeline > li:after {
+	clear: both;
+}
+.timeline > li > .timeline-item {
+	margin-left: 150px;
+	position: relative;
+}
+.timeline > li > .timeline-item > .timeline-header {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 0;
+}
+.timeline > li > .timeline-item > .timeline-header > .title {
+	font-size: 18px;
+}
+.timeline > li > .timeline-item > .timeline-header, .timeline > li > .timeline-item > .timeline-body, .timeline > li > .timeline-item > .timeline-footer {
+	padding: 10px;
+}
+.timeline > li > .timeline-item > .timeline-footer:after, .timeline > li > .timeline-item > .timeline-footer:before {
+	display: table;
+	content: " ";
+	clear: both;
+}
+.timeline > li > .timeline-item > .timeline-body {
+	font-size: 14px;
+}
+.timeline > li > .timeline-item a {
+	color: inherit;
+}
+.timeline > li > .timeline-item > .timeline-body > p {
+	margin: 0;
+}
+.timeline > li.time-label > span {
+	background-color: #FFFFFF;
+	display: inline-block;
+	font-size: 14px;
+	padding: 10px;
+	width: 120px;
+	text-align: center;
+	margin-left: 40px;
+}
+.timeline > li > .btn.btn-circle {
+	left: 0;
+	margin-left: 78px;
+	position: absolute;
+}
+.timeline > li > .time {
+	font-size: 16px;
+    left: 0;
+    position: absolute;
+    top: 15px;
+}
+/* Small devices Phones (<=767px) to all */
+@media (max-width: 767px) {
+	.timeline > li.time-label {
+		display: block;
+		margin: 0 auto 10px;
+		width: 120px;
+	}
+	.timeline:before {
+		left: 0;
+		margin-left: auto;
+		margin-right: auto;
+		right: 0;
+	}
+	.timeline > li > .btn.btn-circle {
+		left: 0;
+		margin-left: auto;
+		margin-right: auto;
+		right: 0;
+	}
+	.timeline > li > .timeline-item {
+		margin-left: 0;
+		margin-top: 60px;
+	}
+	.timeline > li.time-label > span {
+		margin-left: 0;
+	}
+	.timeline > li > .time {
+		font-size:18px;
+	}
+}
+/* Small devices Phones (>=768px) to all */
+@media (min-width: 768px) {
+	/* arrow */
+	.timeline > li > .timeline-item:after {
+		right: 100%;
+		top: 10px;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(172, 25, 61, 0);
+		border-right-color: inherit;
+		border-width: 10px;
+	}
+}
