@@ -1,8 +1,8 @@
 define([],function() {
 	return {
-		defaultRoutePath: '/',
+		defaultRoutePath: '/home',
 		routes: {
-			'/': {
+			'/home': {
 				templateUrl: '/Home/Dashboard',
 				dependencies: [
                     'controllers/HomeViewController'
@@ -10,7 +10,7 @@ define([],function() {
 			},
 			'/division': {
 				templateUrl: '/Home/Division',
-				dependencies: ['controllers/DivisionController']
+				dependencies: ['controllers/DivisionController','directives/app-color','directives/twbsPagination']
 			},
 			'/about': {
 				templateUrl: '/Home/AboutUs',

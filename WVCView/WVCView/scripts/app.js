@@ -20,6 +20,7 @@ define(['routes','services/dependencyResolverFor'],function(config,dependencyRes
 
         	if(config.routes!==undefined) {
         		angular.forEach(config.routes,function(route,path) {
+        			//console.log(route.templateUrl,route.dependencies);
         			$routeProvider.when(path,{ templateUrl: route.templateUrl,resolve: dependencyResolverFor(route.dependencies) });
         		});
         	}
@@ -32,7 +33,7 @@ define(['routes','services/dependencyResolverFor'],function(config,dependencyRes
 
 	app.controller('MenuController',['$scope',function($scope) {
 		$scope.page={ heading: 'Division' };
-		$scope.menus=[{ "name": "Wood Volume","url": "#/","isactive": false }
+		$scope.menus=[{ "name": "Wood Volume","url": "#/home","isactive": false }
 		,{ "name": "Division","url": "#/division","isactive": false }
 		,{ "name": "Village","url": "#/village","isactive": false}];
 	} ]);
