@@ -1,0 +1,58 @@
+﻿.inbox-nav,.inbox-nav li {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.inbox-nav li a {
+    color: #333;
+    display: block;
+    padding: 6px 15px;
+    text-decoration: none;
+    transition: color 0.2s ease 0s;
+}
+.inbox-nav li .btn {
+   padding-left: 15px;
+   text-align: left;
+   color:#fff;
+   margin-bottom:20px;
+}
+.inbox-header form {
+	margin-top:10px;
+}
+.inbox-nav .active a {
+	border-left: 5px solid #E5603B;
+    color: #E5603B;
+    font-weight: 600;
+    padding-left: 10px;
+}
+.inbox-content tr th .metro-checkbox {
+	margin-top: 5px;
+}
+.inbox-content table tr td {
+	cursor: pointer;
+}
+.inbox-content table tr.read {
+	background: rgba(243, 243, 243, 0.85);
+}
+.inbox-content table tr.select {
+	background-color: #FFFFCC;
+}
+.mail-content .avatar {
+	margin: 0 10px 0 0; float:left;
+}
+.mail-content .avatar img {
+	width:32px;
+	height:32px;
+}
+.mail-content > .message-body {
+	margin: 10px 0 10px 42px;
+}
+.tiny-column {
+	width: 18px;
+}
+.date-column {
+	width:200px;
+}
+.sender-column {
+	width:250px;
+}

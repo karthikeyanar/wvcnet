@@ -1,0 +1,76 @@
+﻿.fontawesome-icon-list .fa-hover a {
+	color: #222222;
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	padding-left: 10px;
+}
+.fontawesome-icon-list .fa-hover a .fa {
+	display: inline-block;
+	font-size: 14px;
+	margin-right: 10px;
+	text-align: right;
+	width: 32px;
+}
+.fontawesome-icon-list .fa-hover a:hover {
+	background-color: #1d9d74;
+	color: #ffffff;
+	text-decoration: none;
+}
+.fontawesome-icon-list .fa-hover a:hover .fa {
+	font-size: 28px;
+	vertical-align: -6px;
+}
+.fontawesome-icon-list .fa-hover a:hover .text-muted {
+	color: #bbe2d5;
+}
+/*
+ * Glyphicons
+ *
+ * Special styles for displaying the icons and their classes in the docs.
+ */
+
+.bs-glyphicons {
+	margin: 0;
+	overflow: hidden;
+}
+.bs-glyphicons-list {
+	padding-left: 0;
+	list-style: none;
+}
+.bs-glyphicons li {
+	float: left;
+	width: 25%;
+	height: 115px;
+	padding: 10px;
+	font-size: 10px;
+	line-height: 1.4;
+	text-align: center;
+	border: 1px solid #fff;
+	background-color: #f9f9f9;
+}
+.bs-glyphicons .glyphicon {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	font-size: 24px;
+}
+.bs-glyphicons .glyphicon-class {
+	display: block;
+	text-align: center;
+	word-wrap: break-word; /* Help out IE10+ with class names */
+}
+.bs-glyphicons li:hover {
+	color: #fff;
+	background-color: #563d7c;
+}
+
+@media (min-width: 768px) {
+	.bs-glyphicons {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.bs-glyphicons li {
+		width: 12.5%;
+		font-size: 12px;
+	}
+} 

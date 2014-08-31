@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF8F56EB-2F92-4E01-85FB-9E7BFDCF4460}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WVC</RootNamespace>
+    <AssemblyName>WVC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\components.css" />
+    <Content Include="css\components.min.css" />
+    <Content Include="css\loading-bar.css" />
+    <Content Include="css\loading-bar.min.css" />
+    <Content Include="css\pages\editable.css" />
+    <Content Include="css\pages\error-page.css" />
+    <Content Include="css\pages\fonts.css" />
+    <Content Include="css\pages\formwizard.css" />
+    <Content Include="css\pages\inbox.css" />
+    <Content Include="css\pages\jqueryuislider.css" />
+    <Content Include="css\pages\lock.css" />
+    <Content Include="css\pages\profile.css" />
+    <Content Include="css\pages\search.css" />
+    <Content Include="css\pages\signin.css" />
+    <Content Include="css\pages\signup.css" />
+    <Content Include="css\pages\timeline.css" />
+    <Content Include="css\plugins\bootstrap-colorpicker\bootstrap-colorpicker.css" />
+    <Content Include="css\plugins\bootstrap-colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="css\plugins\bootstrap-datepicker\bootstrap-datepicker.css" />
+    <Content Include="css\plugins\bootstrap-datepicker\bootstrap-datepicker.min.css" />
+    <Content Include="css\plugins\bootstrap-editable\bootstrap-editable.css" />
+    <Content Include="css\plugins\bootstrap-modal\bootstrap-modal.css" />
+    <Content Include="css\plugins\bootstrap-modal\bootstrap-modal.min.css" />
+    <Content Include="css\plugins\bootstrap-select\bootstrap-select.css" />
+    <Content Include="css\plugins\bootstrap-slider\slider.css" />
+    <Content Include="css\plugins\bootstrap-switch\bootstrap-switch.min.css" />
+    <Content Include="css\plugins\bootstrap-timepicker\bootstrap-timepicker.css" />
+    <Content Include="css\plugins\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="css\plugins\bootstrap-wysihtml5\wysiwyg-editor.css" />
+    <Content Include="css\plugins\bootstrap\bootstrap.css" />
+    <Content Include="css\plugins\bootstrap\bootstrap.min.css" />
+    <Content Include="css\plugins\c3\c3.css" />
+    <Content Include="css\plugins\datatable\datatable-bs3.css" />
+    <Content Include="css\plugins\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="css\plugins\dropzone\dropzone.css" />
+    <Content Include="css\plugins\font-awesome\font-awesome.css" />
+    <Content Include="css\plugins\font-awesome\font-awesome.min.css" />
+    <Content Include="css\plugins\fonts\fontawesome-webfont.svg" />
+    <Content Include="css\plugins\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="css\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="css\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="css\plugins\jquery-inputlimiter\jquery.inputlimiter.1.0.css" />
+    <Content Include="css\plugins\jquery-ui\jquery-ui-1.10.3.custom.css" />
+    <Content Include="css\plugins\jqueryfileupload\blueimp-gallery.min.css" />
+    <Content Include="css\plugins\jqueryfileupload\jquery.fileupload-noscript.css" />
+    <Content Include="css\plugins\jqueryfileupload\jquery.fileupload-ui-noscript.css" />
+    <Content Include="css\plugins\jqueryfileupload\jquery.fileupload-ui.css" />
+    <Content Include="css\plugins\jqueryfileupload\jquery.fileupload.css" />
+    <Content Include="css\plugins\jqueryfileupload\style.css" />
+    <Content Include="css\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="css\plugins\nanoscroller\nanoscroller.css" />
+    <Content Include="css\plugins\select2\select2-bootstrap.css" />
+    <Content Include="css\plugins\select2\select2-spinner.gif" />
+    <Content Include="css\plugins\select2\select2.css" />
+    <Content Include="css\plugins\select2\select2.png" />
+    <Content Include="css\plugins\select2\select2x2.png" />
+    <Content Include="css\plugins\ui-lightness\images\animated-overlay.gif" />
+    <Content Include="css\plugins\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="css\plugins\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\plugins\ui-lightness\jquery-ui-1.10.4.custom.css" />
+    <Content Include="css\plugins\ui-lightness\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="css\site.css" />
+    <Content Include="css\site.min.css" />
+    <Content Include="css\themes\black.css" />
+    <Content Include="css\themes\black.min.css" />
+    <Content Include="css\themes\blue-green.css" />
+    <Content Include="css\themes\blue-green.min.css" />
+    <Content Include="css\themes\blue.css" />
+    <Content Include="css\themes\blue.min.css" />
+    <Content Include="css\themes\cardovan.css" />
+    <Content Include="css\themes\cardovan.min.css" />
+    <Content Include="css\themes\dark-blue.css" />
+    <Content Include="css\themes\dark-blue.min.css" />
+    <Content Include="css\themes\green.css" />
+    <Content Include="css\themes\green.min.css" />
+    <Content Include="css\themes\orange.css" />
+    <Content Include="css\themes\orange.min.css" />
+    <Content Include="css\themes\pink.css" />
+    <Content Include="css\themes\pink.min.css" />
+    <Content Include="css\themes\purple.css" />
+    <Content Include="css\themes\purple.min.css" />
+    <Content Include="css\themes\red.css" />
+    <Content Include="css\themes\red.min.css" />
+    <Content Include="css\themes\sky-blue.css" />
+    <Content Include="css\themes\sky-blue.min.css" />
+    <Content Include="css\themes\teal.css" />
+    <Content Include="css\themes\teal.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="js\angular-loading-bar\loading-bar.js" />
+    <Content Include="js\angular-loading-bar\loading-bar.min.js" />
+    <Content Include="js\angular-mocks\angular-mocks.js" />
+    <Content Include="js\angular-route\angular-route.min.js" />
+    <Content Include="js\angular\angular.min.js" />
+    <Content Include="js\bootstrap\bootstrap.js" />
+    <Content Include="js\bootstrap\bootstrap.min.js" />
+    <Content Include="js\helper\helper.js" />
+    <Content Include="js\jquery\additional-methods.js" />
+    <Content Include="js\jquery\additional-methods.min.js" />
+    <Content Include="js\jquery\jquery-1.11.1.min.js" />
+    <Content Include="js\jquery\jquery-2.1.1.min.js" />
+    <Content Include="js\jquery\jquery-ui-1.10.4.custom.js" />
+    <Content Include="js\jquery\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="js\jquery\jquery.2.1.1.min.js" />
+    <Content Include="js\jquery\jquery.validate.min.js" />
+    <Content Include="js\plugins\blockUI\jquery.blockUI.js" />
+    <Content Include="js\plugins\blockUI\jquery.blockUI.min.js" />
+    <Content Include="js\plugins\bootstrap-confirmation\bootstrap-confirmation.min.js" />
+    <Content Include="js\plugins\bootstrap-datepicker\bootstrap-datepicker.js" />
+    <Content Include="js\plugins\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="js\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.js" />
+    <Content Include="js\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.min.js" />
+    <Content Include="js\plugins\bootstrap-modal\bootstrap-modal.js" />
+    <Content Include="js\plugins\bootstrap-modal\bootstrap-modal.min.js" />
+    <Content Include="js\plugins\bootstrap-modal\bootstrap-modalmanager.js" />
+    <Content Include="js\plugins\bootstrap-modal\bootstrap-modalmanager.min.js" />
+    <Content Include="js\plugins\datatable\datatable-bs3.js" />
+    <Content Include="js\plugins\datatable\datatable-bs3.min.js" />
+    <Content Include="js\plugins\datatable\jquery.dataTables.min.js" />
+    <Content Include="js\plugins\jqueryvalidation\additional-methods.js" />
+    <Content Include="js\plugins\jqueryvalidation\additional-methods.min.js" />
+    <Content Include="js\plugins\jqueryvalidation\jquery.validate.js" />
+    <Content Include="js\plugins\jqueryvalidation\jquery.validate.min.js" />
+    <Content Include="js\plugins\select2\select2.js" />
+    <Content Include="js\plugins\select2\select2.min.js" />
+    <Content Include="js\plugins\slimscroll\jquery.slimscroll.js" />
+    <Content Include="js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="js\plugins\twbsPagination\jquery.twbsPagination.js" />
+    <Content Include="js\plugins\twbsPagination\jquery.twbsPagination.min.js" />
+    <Content Include="js\require\require.js" />
+    <Content Include="js\require\require.min.js" />
+    <Content Include="scripts\app.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\controllers\AboutViewController.js" />
+    <Content Include="scripts\controllers\ContactViewController.js" />
+    <Content Include="scripts\controllers\DivisionController.js" />
+    <Content Include="scripts\controllers\HomeViewController.js" />
+    <Content Include="scripts\directives\app-color.js" />
+    <Content Include="scripts\directives\twbsPagination.js" />
+    <Content Include="scripts\routes.js" />
+    <Content Include="scripts\services\dependencyResolverFor.js" />
+    <Content Include="Views\web.config" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="css\plugins\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\plugins\fonts\fontawesome-webfont.ttf" />
+    <Content Include="css\plugins\fonts\fontawesome-webfont.woff" />
+    <Content Include="css\plugins\fonts\FontAwesome.otf" />
+    <Content Include="css\plugins\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="css\plugins\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="css\plugins\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Home\Division.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="img\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55746</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1100</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

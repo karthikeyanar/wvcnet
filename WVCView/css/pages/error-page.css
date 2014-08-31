@@ -1,0 +1,39 @@
+﻿@media (min-width: 421px) {
+	.error-page-container > .error-page-content {
+		margin: auto;
+		width: 400px;
+	}
+}
+@media (max-width: 991px) {
+	.logo {
+		margin: 10px 0;
+	}
+}
+@media (min-width: 992px) {
+	.error-page-container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	.error-page-container > .error-page-content {
+		margin: auto;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		bottom: 0;
+		right: 0;
+		margin-left: -220px;
+		margin-top: -300px;
+	}
+}
+.error-panel {
+	color: #fff;
+	background-color: transparent;
+	border-color: transparent;
+}
+/* error-code */
+h1.error-code {
+	font-size: 80px;
+	font-weight: 300;
+	margin: 0;
+}
