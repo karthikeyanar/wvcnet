@@ -1,0 +1,33 @@
+.menu-bar .navbar {
+	background:	@menu-bar-bg-color;
+	color: @menu-bar-text-color;
+	border: 0;
+	min-height:@menu-bar-min-height;
+	margin-bottom:0;
+	z-index:3;
+}
+.menu-bar .navbar.navbar-fixed-top {
+	top: @header-min-height;
+}
+.menu-bar .navbar .navbar-brand {
+	font-size: 15px;
+	height: 40px;
+	background-color: @menu-bar-brand-bg-color;
+  color: @menu-bar-brand-text-color;
+	padding: 10px 15px;
+}
+.menu-bar .navbar .navbar-nav > li > a {
+	color: #fff;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.menu-bar .navbar .navbar-nav > li.active > a,
+.menu-bar .navbar .navbar-nav > li > a:hover,
+.menu-bar .navbar .navbar-nav > li > a:focus,
+.menu-bar .navbar .navbar-nav > li > a:active {
+	background: darken(@menu-bar-bg-color,10%);
+	color: @menu-bar-text-color;
+}
+.menu-bar .navbar .navbar-nav > li > a > i {
+	margin-right: 5px;
+}

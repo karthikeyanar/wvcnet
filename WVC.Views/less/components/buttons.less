@@ -1,0 +1,191 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+   .border-radius(0);
+   transition: background-color 0.15s linear 0s;
+}
+.btn.btn-metro {
+	border: solid @btn-metro-border-width #000;
+	background-color: @btn-metro-bg;
+	color: @btn-metro-color;
+}
+// Alternate buttons
+// --------------------------------------------------
+.btn-default {
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+.btn-primary {
+  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+// Success appears as green
+.btn-success {
+  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+// Info appears as blue-green
+.btn-info {
+  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+// Warning appears as orange
+.btn-warning {
+  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+// Danger and error appear as red
+.btn-danger {
+  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+// Purple
+.btn-purple {
+  .button-variant(@btn-purple-color; @btn-purple-bg; @btn-purple-border);
+}
+// Cardovan
+.btn-cardovan {
+  .button-variant(@btn-cardovan-color; @btn-cardovan-bg; @btn-cardovan-border);
+}
+// Teal
+.btn-teal {
+  .button-variant(@btn-teal-color; @btn-teal-bg; @btn-teal-border);
+}
+// Pink
+.btn-pink {
+  .button-variant(@btn-pink-color; @btn-pink-bg; @btn-pink-border);
+}
+// Dark Blue
+.btn-dark-blue {
+  .button-variant(@btn-dark-blue-color; @btn-dark-blue-bg; @btn-dark-blue-border);
+}
+// Blue
+.btn-blue {
+  .button-variant(@btn-blue-color; @btn-blue-bg; @btn-blue-border);
+}
+// Black
+.btn-black {
+  .button-variant(@btn-black-color; @btn-black-bg; @btn-black-border);
+}
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: @link-color;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    .box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: @btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.btn.btn-metro.btn-primary {
+  .button-metro-variant(@btn-primary-bg);
+}
+// Success appears as green
+.btn.btn-metro.btn-success {
+  .button-metro-variant(@btn-success-bg);
+}
+// Info appears as blue-green
+.btn.btn-metro.btn-info {
+  .button-metro-variant(@btn-info-bg);
+}
+// Warning appears as orange
+.btn.btn-metro.btn-warning {
+  .button-metro-variant(@btn-warning-bg);
+}
+// Danger and error appear as red
+.btn.btn-metro.btn-danger {
+  .button-metro-variant(@btn-danger-bg);
+}
+// Purple
+.btn.btn-metro.btn-purple {
+  .button-metro-variant(@btn-purple-bg);
+}
+// Cardovan
+.btn.btn-metro.btn-cardovan {
+  .button-metro-variant(@btn-cardovan-bg);
+}
+// Teal
+.btn.btn-metro.btn-teal {
+  .button-metro-variant(@btn-teal-bg);
+}
+// Pink
+.btn.btn-metro.btn-pink {
+  .button-metro-variant(@btn-teal-bg);
+}
+// Dark Blue
+.btn.btn-metro.btn-dark-blue {
+  .button-metro-variant(@btn-dark-blue-bg);
+}
+// Blue
+.btn.btn-metro.btn-blue {
+  .button-metro-variant(@btn-blue-bg);
+}
+// White button
+.btn.btn-metro.btn-transparent {
+	border-color: #fff;
+	color: inherit;
+	&:hover,
+	&:focus,
+	&:active,
+	&.active,
+	.open .dropdown-toggle& {
+		border-color: #000;
+		background-color: #000;
+		color: #fff;
+	}
+}
+// Button Circle
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}

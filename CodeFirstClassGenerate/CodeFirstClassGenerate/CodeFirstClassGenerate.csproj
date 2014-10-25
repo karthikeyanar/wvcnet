@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{427DF911-02DE-47C3-9C3D-C3B96F5FBD55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeFirstClassGenerate</RootNamespace>
+    <AssemblyName>CodeFirstClassGenerate</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\aspnetrole.cs" />
+    <Compile Include="Models\aspnetuser.cs" />
+    <Compile Include="Models\aspnetuserclaim.cs" />
+    <Compile Include="Models\aspnetuserlogin.cs" />
+    <Compile Include="Models\ecamContext.cs" />
+    <Compile Include="Models\ec_airline.cs" />
+    <Compile Include="Models\ec_airport.cs" />
+    <Compile Include="Models\ec_company.cs" />
+    <Compile Include="Models\ec_country.cs" />
+    <Compile Include="Models\ec_currency.cs" />
+    <Compile Include="Models\ec_document.cs" />
+    <Compile Include="Models\ec_flight.cs" />
+    <Compile Include="Models\ec_flight_type.cs" />
+    <Compile Include="Models\ec_forex.cs" />
+    <Compile Include="Models\ec_group.cs" />
+    <Compile Include="Models\ec_gsa.cs" />
+    <Compile Include="Models\ec_pl_ledger.cs" />
+    <Compile Include="Models\ec_pl_value.cs" />
+    <Compile Include="Models\ec_sales.cs" />
+    <Compile Include="Models\ec_target.cs" />
+    <Compile Include="Models\ec_user.cs" />
+    <Compile Include="Models\ec_user_airline.cs" />
+    <Compile Include="Models\ec_user_permission.cs" />
+    <Compile Include="Models\ec_zone.cs" />
+    <Compile Include="Models\Mapping\aspnetroleMap.cs" />
+    <Compile Include="Models\Mapping\aspnetuserclaimMap.cs" />
+    <Compile Include="Models\Mapping\aspnetuserloginMap.cs" />
+    <Compile Include="Models\Mapping\aspnetuserMap.cs" />
+    <Compile Include="Models\Mapping\ec_airlineMap.cs" />
+    <Compile Include="Models\Mapping\ec_airportMap.cs" />
+    <Compile Include="Models\Mapping\ec_companyMap.cs" />
+    <Compile Include="Models\Mapping\ec_countryMap.cs" />
+    <Compile Include="Models\Mapping\ec_currencyMap.cs" />
+    <Compile Include="Models\Mapping\ec_documentMap.cs" />
+    <Compile Include="Models\Mapping\ec_flightMap.cs" />
+    <Compile Include="Models\Mapping\ec_flight_typeMap.cs" />
+    <Compile Include="Models\Mapping\ec_forexMap.cs" />
+    <Compile Include="Models\Mapping\ec_groupMap.cs" />
+    <Compile Include="Models\Mapping\ec_gsaMap.cs" />
+    <Compile Include="Models\Mapping\ec_pl_ledgerMap.cs" />
+    <Compile Include="Models\Mapping\ec_pl_valueMap.cs" />
+    <Compile Include="Models\Mapping\ec_salesMap.cs" />
+    <Compile Include="Models\Mapping\ec_targetMap.cs" />
+    <Compile Include="Models\Mapping\ec_userMap.cs" />
+    <Compile Include="Models\Mapping\ec_user_airlineMap.cs" />
+    <Compile Include="Models\Mapping\ec_user_permissionMap.cs" />
+    <Compile Include="Models\Mapping\ec_zoneMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
+    <None Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt" />
+    <None Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

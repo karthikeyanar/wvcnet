@@ -1,0 +1,19 @@
+//
+// List groups
+// --------------------------------------------------
+
+// Individual list items
+//
+// Use on `li`s or `div`s within the `.list-group` parent.
+
+.list-group-item {
+  // Place the border on the list items and negative margin up for better styling
+  // Round the first and last items
+  &:first-child {
+    .border-top-radius(@list-group-border-radius);
+  }
+  &:last-child {
+    .border-bottom-radius(@list-group-border-radius);
+  }
+  padding: 5px 10px;
+}

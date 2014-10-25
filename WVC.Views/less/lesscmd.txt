@@ -1,0 +1,3 @@
+﻿lessc -x E:\Projects\wvcs\WVC.Views\less\components\components.less > E:\Projects\wvcs\WVC.Views\css\components.min.css
+lessc -x E:\Projects\wvcs\WVC.Views\less\site\site.less > E:\Projects\wvcs\WVC.Views\css\site.min.css
+lessc -x E:\Projects\wvcs\WVC.Views\less\themes\sky-blue.less > E:\Projects\wvcs\WVC.Views\css\themes\sky-blue.min.css

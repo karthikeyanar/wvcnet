@@ -1,0 +1,96 @@
+
+/* over ride */
+
+.ui-menu {
+	background-clip: none;
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 0;
+	box-shadow: none;
+	display: none;
+	float: left;
+	left: 0;
+	list-style: none outside none;
+	margin: 2px 0 0;
+	min-width: 160px;
+	padding: 5px 0;
+	position: absolute;
+	top: 100%;
+	z-index: 9999;
+	border: 2px solid #DCDCDC;
+	margin-top: 0;
+}
+
+.ui-menu > li > a {
+	clear: both;
+	color: #333333;
+	display: block;
+	font-weight: normal;
+	line-height: 20px;
+	padding: 3px 20px;
+	white-space: nowrap;
+}
+
+.ui-autocomplete-loading {
+	background-image: url(../../../img/ui-ac-spinner.gif);
+	background-position: right center;
+	background-repeat: no-repeat;
+	z-index: 3 !important;
+}
+
+.ui-menu .ui-menu-item a {
+	clear: both;
+	color: #333333;
+	display: block;
+	font-weight: normal;
+	line-height: 20px;
+	white-space: nowrap;
+}
+.ui-menu .ui-menu-item > .ui-state-focus, .ui-menu .ui-menu-item a:hover {
+	background: #2E7EFC;
+	color: #fff;
+}
+.ui-autocomplete {
+	max-height: 300px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+.input-icon.ui-autocomplete-input-box > i {
+	margin: 7px 2px 4px 10px;
+}
+.input-group-btn > .ui-aj-combo-btn {
+	border-right: 0 none !important;
+    margin-right: 0 !important;
+    padding-left: 10px;
+    padding-right: 0;
+}
+.input-group-btn > .ui-aj-combo-btn > i {
+	color: #ccc;
+	font-size: 16px;
+}
+.ui-ajax-combo .form-control {
+ border-left: 0 none !important;
+    padding-left: 8px;
+}
+.ui-ajax-combo .remove-value {
+    color: #333;
+    font-size: 16px;
+    position: absolute;
+    right: 45px;
+    top: 2px;
+    z-index: 2;
+	display: none;
+}
+.ui-ajax-combo .remove-value > a,
+.ui-ajax-combo .remove-value > a:hover,
+.ui-ajax-combo .remove-value > a:focus {
+	color: #aaa;
+	text-decoration:none;
+}
+.ui-autocomplete-selected .remove-value {
+	display: block;
+}

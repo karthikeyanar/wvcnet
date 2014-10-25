@@ -1,0 +1,59 @@
+.chart {
+    width: 100%;
+    .button {
+        position: absolute;
+        cursor: pointer;
+        font-size: smaller;
+        color: #999;
+        background-color: #eee;
+        padding: 2px;
+    }
+}
+.chart-small {
+    height: 150px;
+}
+.chart-medium {
+    height: 200px;
+}
+.chart-large {
+    height: 300px;
+}
+.chart-tooltip {
+    background: #333;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    display: none;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+.morris-chart {
+    & > svg {
+        width: 100% !important;
+    }
+}
+.easy-pie-chart {
+	position: relative;
+	height: 110px;
+    line-height: 110px;
+    width: 110px;
+    position: relative;
+    text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+.easy-pie-chart canvas {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.easy-pie-chart > span, .easy-pie-chart-box > .title {
+	color: #333;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+.easy-pie-chart-box > .title {
+	font-size: 16px;
+	margin-top: 15px;
+}

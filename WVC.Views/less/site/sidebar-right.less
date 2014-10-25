@@ -1,0 +1,80 @@
+@media (min-width: @screen-md-min) {
+    .sidebar-right .sidebar-wrapper {
+        float: right;
+        position: relative;
+    }
+
+    .sidebar-right .sidebar-wrapper {
+        margin-right: @sidebar-width;
+    }
+
+    .sidebar-right.sidebar-animation .sidebar-wrapper {
+        .transition();
+        .transition_property(margin-right);
+    }
+
+    .sidebar-right .page-container .page-content,
+    .sidebar-right .page-container .footer {
+        margin-right: @sidebar-width;
+        margin-left: 0;
+    }
+    // sidebar small
+    .sidebar-right.sidebar-sm .sidebar-wrapper {
+        margin-right: @sidebar-sm-width;
+    }
+
+    .sidebar-right.sidebar-sm .page-container .page-content,
+    .sidebar-right.sidebar-sm .page-container .footer {
+        margin-right: @sidebar-sm-width;
+        margin-left: 0;
+    }
+
+    .sidebar-right.sidebar-sm-fixed .page-container .page-content,
+    .sidebar-right.sidebar-sm-fixed .page-container .footer {
+        margin-right: @sidebar-sm-width !important;
+        margin-left: 0 !important;
+    }
+
+    .sidebar-right.sidebar-sm .sidebar .sidebar-menu > li.open.hover > a > .menu-text,
+    .sidebar-right.sidebar-sm .sidebar .sidebar-menu > li.open.hover > .nav.in {
+        right: @sidebar-sm-width;
+        left: auto;
+    }
+
+    .sidebar-right.sidebar-sm .sidebar .sidebar-user > .info {
+        left: auto;
+        right: @sidebar-sm-width;
+    }
+    // sidebar medium
+    .sidebar-right.sidebar-md .sidebar-wrapper {
+        margin-right: @sidebar-md-width;
+    }
+
+    .sidebar-right.sidebar-md .page-container .page-content,
+    .sidebar-right.sidebar-md .page-container .footer {
+        margin-right: @sidebar-md-width;
+        margin-left: 0;
+    }
+
+    .sidebar-right.sidebar-md-fixed .page-container .page-content,
+    .sidebar-right.sidebar-md-fixed .page-container .footer {
+        margin-right: @sidebar-md-width !important;
+        margin-left: 0 !important;
+    }
+
+    .sidebar-right.sidebar-md .sidebar .sidebar-menu > li.open.hover > .nav.in {
+        right: @sidebar-md-width;
+        left: auto;
+    }
+
+    .sidebar-right.sidebar-md .sidebar .sidebar-menu > li.open.hover > a > .menu-text,
+    .sidebar-right.sidebar-md .sidebar .sidebar-menu > li.open.hover > .nav.in {
+        right: @sidebar-md-width;
+        left: auto;
+    }
+
+    .sidebar-right.sidebar-md .sidebar .sidebar-user > .info {
+        left: auto;
+        right: @sidebar-md-width;
+    }
+}

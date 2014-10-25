@@ -1,0 +1,14 @@
+.page-container .footer {
+	padding: @page-content-padding;
+	padding-top: 10px;
+	padding-bottom: 10px;
+} 
+.sidebar-animation .page-container .footer {
+	.transition();
+	.transition_property(margin-left);
+}
+@media (max-width: @screen-sm-max) {
+	.page-container .footer {
+		margin-left: 0;
+	}
+}

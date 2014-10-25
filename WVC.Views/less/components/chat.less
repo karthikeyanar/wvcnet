@@ -1,0 +1,153 @@
+.chat-content {
+	position: relative;
+}
+.slimScrollDiv .chat-content {
+	padding-right: 10px;
+}
+.chat-content:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+.chat-content &>.chat-list, 
+.chat-content &>.chat-list &>.chat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+	position: relative;
+}
+.chat-content &>.chat-list &>.chat { 
+	margin-bottom: 20px;
+}
+.chat-content &>.chat-list &>.chat:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+.chat-content {
+    & > .chat-list {
+        & > .chat {
+            & > .img {
+                & > .chat-img {
+                    width:64px;
+                    height:64px;
+                }
+            }
+            & > .chat-body {
+                padding: 10px;
+                & > .chat-heading:after {
+                    clear:both;
+                    content: ' ';
+                    display:table;
+                }
+                & > .name {
+                    float:left;
+					font-size:13px;
+					font-weight:600;
+                }
+            }
+            & > .chat-body:after {
+                top: 10px;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                border-color: rgba(172, 25, 61, 0);
+                pointer-events: none;
+            }
+        }
+        & > .chat.in {
+            & > .img {
+				 position:absolute;
+				 left:0;
+            }
+            & > .chat-body {
+                margin: 0 0 0 80px;
+            }
+            & > .chat-body:after {
+                left: 60px;
+                border-right-color: inherit;
+                border-width: 10px;
+            }
+        }
+        & > .chat.out {
+            & > .img {
+				 position:absolute;
+				 right:0;
+            }
+            & > .chat-body {
+                margin: 0 80px 0 0;
+            }
+            & > .chat-body:after {
+                right: 60px;
+                border-left-color: inherit;
+                border-width: 11px;
+            }
+        }
+    }
+}
+.chat-content > .chat-list > .chat > .chat-body {
+    & > .datetime {
+        font-size: 11px;
+		float:right;
+		margin-top: 5px;
+    }
+	& > .message {
+		clear:both;
+		font-size:13px;
+		padding-top:5px;
+		margin-bottom:0;
+	}
+	& > .message:after,
+	& > .message:before {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
+.chat-content > .chat-list > .chat > .chat-body:after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+.chat-content > .chat-list > .chat.in > .chat-body.notes-default:after {
+	border-right-color: @gray-light;
+}
+.chat-content > .chat-list > .chat.in > .chat-body.notes-primary:after {
+	border-right-color: @brand-primary;
+}
+.chat-content > .chat-list > .chat.in > .chat-body.notes-success:after {
+	border-right-color: @brand-success;
+}
+.chat-content > .chat-list > .chat.in > .chat-body.notes-danger:after {
+	border-right-color: @brand-danger;
+}
+.chat-content > .chat-list > .chat.in > .chat-body.notes-warning:after {
+	border-right-color: @brand-warning;
+}
+.chat-content > .chat-list > .chat.in > .chat-body.notes-info:after {
+	border-right-color: @brand-info;
+}
+.chat-content > .chat-list > .chat.out > .chat-body.notes-default:after {
+	border-left-color: @gray-light;
+}
+.chat-content > .chat-list > .chat.out > .chat-body.notes-primary:after {
+	border-left-color: @brand-primary;
+}
+.chat-content > .chat-list > .chat.out > .chat-body.notes-success:after {
+	border-left-color: @brand-success;
+}
+.chat-content > .chat-list > .chat.out > .chat-body.notes-danger:after {
+	border-left-color: @brand-danger;
+}
+.chat-content > .chat-list > .chat.out > .chat-body.notes-warning:after {
+	border-left-color: @brand-warning;
+}
+.chat-content > .chat-list > .chat.out > .chat-body.notes-info:after {
+	border-left-color: @brand-info;
+}
+.chat-content > .chat-list > .chat.out > .chat-body.notes-primary {
+	border: 1px solid #eee;
+    border-right: 3px solid @brand-primary;
+}

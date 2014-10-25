@@ -1,0 +1,11 @@
+﻿@{ Layout = null; }
+<div class="alert alert-danger error-alert">
+	<p>
+		<!-- ko foreach: errors() -->
+		<span data-bind="text:ErrorMessage"></span><br />
+		<!-- /ko -->
+	</p>
+	<button type="button" class="close" data-dismiss="alert">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>

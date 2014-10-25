@@ -1,0 +1,187 @@
+.tile {
+    border: 4px solid transparent;
+    background-color: #DDDDDD;
+    box-shadow: none;
+    cursor: pointer;
+    display: block;
+    float: left;
+    margin: 0 10px 10px 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    font-size: 13px;
+    height: 120px;
+    margin: 0 10px 10px 0;
+    width: 120px;
+    .tile-content {
+        display: block;
+        height: 100%;
+        left: 0;
+        margin: 0;
+        overflow: hidden;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        color: #fff;
+        display: none;
+    }
+    .tile-content.image {
+        max-height: 100%;
+        min-height: 100%;
+        width: 100%;
+        img {
+            max-width: 100%;
+        }
+    }
+    .tile-content.image-set {
+        img {
+            border: 1px #1e1e1e solid;
+            float: left;
+            height: 50%;
+            margin: 0;
+            padding: 0;
+            width: 25% !important;
+        }
+        img:first-child {
+            float: left;
+            height: 100%;
+            width: 50% !important;
+        }
+    }
+    .tile-content:first-child {
+        display: block;
+    }
+}
+.tile:hover {
+    border: 4px solid #AAAAAA;
+}
+.tile:active {
+    outline: 0;
+}
+.tile.no-outline {
+    outline-color: transparent;
+}
+.tile.half {
+    height: 55px;
+    width: 55px;
+}
+.tile.vertical {
+    height: 250px;
+}
+.tile.double {
+    width: 250px;
+}
+.tile.double-vertical {
+    height: 250px;
+}
+.tile.triple {
+    width: 380px;
+}
+.tile.triple-vertical {
+    height: 380px;
+}
+.tile-box {
+    background-color: #fff;
+    margin-right: 0 !important;
+    border: 0 !important;
+}
+.tile.tile-box {
+    width: 130px;
+}
+.tile.double.tile-box {
+    width: 260px;
+}
+.tile.triple.tile-box {
+    width: 390px;
+}
+.tile.selected {
+    border: 4px #4390df solid;
+}
+.tile.selected:after {
+    border-left: 28px solid transparent;
+    border-top: 28px solid #4390df;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.tile.selected:before {
+    color: #fff;
+    content: "\f00c";
+    display: block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9pt;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+.tile .tile-content h1, .tile .tile-content h2, .tile .tile-content h3, .tile .tile-content h4, .tile .tile-content h5, .tile .tile-content h6, .tile .tile-content p {
+    margin: 0 0 5px 0;
+}
+.tile .tile-content.icon i, .tile .tile-content.icon img {
+    color: #fff;
+    height: 56px;
+    left: 50%;
+    line-height: 56px;
+    margin-left: -28px;
+    margin-top: -28px;
+    position: absolute;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    width: 56px;
+}
+.tile .brand, .tile .tile-status {
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    min-height: 29px;
+    position: absolute;
+    right: 0;
+}
+.tile .brand:before, .tile .tile-status:before, .tile .brand:after, .tile .tile-status:after {
+    content: "";
+    display: table;
+}
+.tile .brand:after, .tile .tile-status:after {
+    clear: both;
+}
+.tile .brand.opacity, .tile .tile-status.opacity {
+    opacity: .7;
+}
+.tile .brand .name, .tile .tile-status .name, .tile .brand .label, .tile .tile-status .label, .tile .brand .text, .tile .tile-status .text {
+    background: transparent;
+    color: #fff;
+    display: block;
+    margin: 5px 20px 2px 5px;
+}
+.tile .brand .text, .tile .tile-status .text {
+    font-size: 8pt;
+    line-height: 10pt;
+    margin: 4px 5px;
+}
+.tile .brand .badge, .tile .tile-status .badge {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border-radius: 0 !important;
+    bottom: 0;
+    color: #FFFFFF;
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    height: auto;
+    margin: 0;
+    padding: 8px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    vertical-align: middle !important;
+    width: auto;
+    line-height: 14px;
+}

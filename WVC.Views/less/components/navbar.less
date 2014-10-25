@@ -1,0 +1,23 @@
+//
+// Navbars
+// --------------------------------------------------
+
+
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+
+.navbar {
+  @media (min-width: @grid-float-breakpoint) {
+    border-radius: @navbar-border-radius;
+  }
+}
+  
+// Fix the top/bottom navbars when screen real estate supports it
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  @media (min-width: @grid-float-breakpoint) {
+    border-radius: 0;
+  }
+}

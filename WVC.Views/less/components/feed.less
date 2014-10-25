@@ -1,0 +1,52 @@
+.feed {
+    position: relative;
+}
+.feed > ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.feed > ul > .feed-row {
+  position: relative;
+  list-style:none;
+  padding: 15px 0;
+  margin:0;
+  clear:both;
+}
+.feed > ul > .feed-row:after {
+    background-color: #eee;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 95px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    z-index: 1;
+}
+.feed > ul > .feed-row > .feed-time {
+    float: left;
+    text-align: right;
+    width: 70px;
+    font-size:12px;
+}
+.feed > ul > .feed-row > .feed-icon {
+    border-radius: 15px;
+    font-size: 14px;
+    height: 30px;
+    left: 80px;
+    line-height: 28px;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 30px;
+    z-index: 2;
+}
+.feed > ul > .feed-row > .feed-content {
+    margin-left: 120px;
+}
+.feed > ul > .feed-row > .feed-content:after {
+    content:'';
+    clear:both;
+    display:table;
+}

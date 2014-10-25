@@ -1,0 +1,12 @@
+.page-container {
+	position: relative;
+}
+.page-container .page-content {
+	position: relative;
+	padding: @page-content-padding;
+}
+@media (min-width: @screen-md-min) {
+  .page-container .page-content {
+		min-height: 400px;
+	}
+}

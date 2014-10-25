@@ -1,0 +1,69 @@
+﻿.theme-panel {
+    position: absolute;
+    right: 0;
+    top: 10px;
+	z-index: 1;
+}
+.theme-panel > .toggler {
+	color:inherit;
+	float:left;
+	padding: 8px 10px;
+}
+.theme-panel > .toggler > i {
+	font-size: 20px;
+}
+.theme-panel > .theme-options {
+	float:left;
+	width:250px;
+	border: solid 2px #000;
+	border-right:0;
+	display:none;
+	background:#fff;
+	padding:10px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.theme-panel > .theme-options.open {
+	display:block;
+}
+.theme-panel > .theme-options .form-horizontal .form-group {
+	margin: 0 0 3px 0;
+}
+.theme-panel .theme-group > ul, .theme-panel .theme-group > ul > li {
+	 list-style: none;
+	 margin:0;
+	 padding:0;
+}
+.theme-panel .theme-group > ul > li {
+	float:left;
+	position:relative;
+}
+.theme-panel .theme-group > ul > li > a {
+    display: block;
+    margin: 0 10px 10px 0;
+    padding: 12px;
+	color:#fff;
+}
+.theme-panel .theme-group > ul > li.select > a:before {
+	color: inherit;
+	content: "\f00c";
+    font-family: 'FontAwesome';
+	left: 5px;
+    margin: 0;
+    padding: 3px 0 0 0;
+    position: absolute;
+    top: 0px;
+}
+
+/* theme colors */
+.theme-sky-blue { background-color: @theme-sky-blue; }
+.theme-green { background-color: @theme-green; }
+.theme-blue-green { background-color: @theme-blue-green; }
+.theme-orange { background-color: @theme-orange; }
+.theme-red { background-color: @theme-red; }
+.theme-purple { background-color: @theme-purple; }
+.theme-cardovan { background-color: @theme-cardovan; }
+.theme-teal { background-color: @theme-teal; }
+.theme-pink { background-color: @theme-pink; }
+.theme-dark-blue { background-color: @theme-dark-blue; }
+.theme-blue { background-color: @theme-blue; }
+.theme-black { background-color: @theme-black; }

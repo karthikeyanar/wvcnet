@@ -1,0 +1,38 @@
+*,*:focus,*:hover{ 
+	outline:none !important;
+}
+html {
+	height: 100%;
+}
+body {
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  font-weight: @font-weight;
+}
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+@-ms-viewport       {  width: auto !important;}
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+// Links
+a {
+  color: @link-color;
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: none;
+  }
+  &:focus {
+    .tab-focus();
+  }
+}
