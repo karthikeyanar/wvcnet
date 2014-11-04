@@ -57,7 +57,7 @@ define("app",["knockout","komapping","../models/AuthModel","finch","helper"],fun
 		}
 
 		self.setMy(helper.getAuth(),helper.getLS("rememberme"));
-		this.checkAuth();
+		//this.checkAuth();
 
 
 	}

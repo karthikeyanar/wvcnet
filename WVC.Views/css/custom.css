@@ -61,3 +61,49 @@
     margin-left: 23px;
     margin-top: 2px; float:left;
 }
+.select2-fg .select2-container.select2-container-multi.form-control {
+	display: block !important;
+}
+.tree-expand {
+	width:16px;
+	height:16px;
+	background-image: url(../img/excol.png);
+	background-repeat: no-repeat;
+	color: #333;
+}
+.tree-expand:hover,.tree-expand:focus {
+	text-decoration: none;color: #333;
+}
+.tree-expand.ex-plus {
+	background-position: left top;
+}
+.tree-expand.ex-minus {
+	background-position: 0 -20px;
+}
+.blockUI.blockMsg.blockPage, 
+.blockUI.blockMsg.blockElement {
+    left: 0 !important;
+    position: fixed !important;
+    right: 0 !important;
+    text-align: center !important;
+    top: 0 !important;
+    width: auto !important;
+    z-index: 999999999 !important;
+}
+.blockUI.blockMsg.blockElement > .blockUI-message,
+.blockUI.blockMsg.blockPage > .blockUI-message {
+    background: #FEFD6B !important;
+    color: #000 !important;
+    min-width: 0;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+.popover.confirmation {
+    min-width: 150px;
+}
+.popover.confirmation .popover-title {
+    font-size: 13px;
+}
+.popover.confirmation .btn-group > .btn:first-child {
+    margin-right: 15px;
+}

@@ -192,6 +192,7 @@
     <Compile Include="Controllers\RangeController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
+    <Compile Include="Controllers\WoodVolumeItemController.cs" />
     <Compile Include="Controllers\WoodVolumeController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Global.asax.cs">

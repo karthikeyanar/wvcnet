@@ -199,6 +199,7 @@
     <Content Include="js\knockout\knockout.validation.js" />
     <Content Include="js\knockout\knockout.validation.min.js" />
     <Content Include="js\knockout\ko-binding.js" />
+    <Content Include="js\models\WoodVolumeItemModel.js" />
     <Content Include="js\models\WoodVolumeModel.js" />
     <Content Include="js\models\_WoodVolumeModel.js" />
     <Content Include="js\models\UserModel.js" />

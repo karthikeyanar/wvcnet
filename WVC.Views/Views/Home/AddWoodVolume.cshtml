@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="col-md-6">
+            <div class="col-md-12  text-center">
                 <!-- ko if: model().errors() -->
                 <div class="form-group">
                     <div class="col-md-12">
@@ -105,7 +105,7 @@
                 </div>
                 <!-- /ko -->
                 <div class="form-group">
-                    <div class="col-md-offset-4 col-md-8">
+                    <div class="col-md-12">
                         <input type="hidden" name="id" data-bind="value:model().id" />
                         <!-- ko if: model().is_edit_mode()==false -->
                         <button type="submit" id="save" class="btn btn-success" data-loading-text="Add...">Add</button>
@@ -113,7 +113,7 @@
                         <!-- ko if: model().is_edit_mode()==true -->
                         <button type="submit" id="save" class="btn btn-primary" data-loading-text="Save...">Save</button>
                         <!-- /ko -->
-                        <a href="#/index" class="btn btn-danger margin-left-15">Cancel</a>
+                        <a href="#/index" class="btn btn-danger m-l-15">Cancel</a>
                     </div>
                 </div>
             </div>
@@ -136,18 +136,46 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td><input type="text" class="form-control input-sm" name="description" /></td>
-                        <td><input type="text" class="form-control input-sm" name="length" /></td>
-                        <td><input type="text" class="form-control input-sm" name="girth" /></td>
-                        <td><input type="text" class="form-control input-sm" name="volume" /></td>
-                        <td><span></span></td>
-                        <td style="width:100px"><span></span></td>
+                        <td><span data-bind="text:model().volume_count()+1"></span></td>
+                        <td><input type="text" class="form-control input-xs" name="description" placeholder="Property" /></td>
+                        <td><input type="text" class="form-control input-xs text-right" name="length" placeholder="Length" /></td>
+                        <td><input type="text" class="form-control input-xs text-right" name="girth" placeholder="Girth" /></td>
+                        <td><input type="text" class="form-control input-xs text-right" name="volume" placeholder="Volume" /></td>
+                        <td class="text-right"><span id="coefficient">35.315</span></td>
+                        <td class="text-right" style="width:100px"><span id="finalvolume"></span></td>
                         <td style="width: 80px" class="text-center">
-                            <button type="button" class="btn btn-sm btn-success">Add</button>
+                            <input type="hidden" name="wood_volume_id" data-bind="value:model().id" />
+                            <input type="hidden" name="id" value="0" />
+                            <button type="button" class="btn btn-xs btn-success save-btn" data-loading-text="Add...">Add</button>
                         </td>
                     </tr>
-                    <!-- ko foreach: model().items -->
+                    <!-- ko foreach: model().volumes -->
+                    <tr data-bind="visible:is_edit_mode()==false">
+                        <td><span data-bind="text:$index()+1"></span></td>
+                        <td><span data-bind="text:description"></span></td>
+                        <td><span data-bind="text:length"></span></td>
+                        <td><span data-bind="text:girth"></span></td>
+                        <td><span data-bind="text:volume"></span></td>
+                        <td class="text-right"><span id="coefficient">35.315</span></td>
+                        <td class="text-right" style="width:100px"><span id="finalvolume" data-bind="text:final_volume"></span></td>
+                        <td style="width: 80px" class="text-center">
+                            <button type="button" class="btn btn-xs btn-primary" data-bind="click:edit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr data-bind="visible:is_edit_mode()==true">
+                        <td><span data-bind="text:$index()+1"></span></td>
+                        <td><input type="text" class="form-control input-xs" name="description" data-bind="value:description" placeholder="Property" /></td>
+                        <td><input type="text" class="form-control input-xs text-right" name="length" data-bind="value:length" placeholder="Length" /></td>
+                        <td><input type="text" class="form-control input-xs text-right" name="girth" data-bind="value:girth" placeholder="Girth" /></td>
+                        <td><input type="text" class="form-control input-xs text-right" name="volume" data-bind="value:volume" placeholder="Volume" /></td>
+                        <td class="text-right"><span id="coefficient">35.315</span></td>
+                        <td class="text-right" style="width:100px"><span id="finalvolume" data-bind="text:final_volume"></span></td>
+                        <td style="width: 80px" class="text-center">
+                            <input type="hidden" name="wood_volume_id" data-bind="value:wood_volume_id" />
+                            <input type="hidden" name="id" data-bind="value:id" />
+                            <button type="button" class="btn btn-xs btn-primary save-btn" data-loading-text="Save...">Save</button>
+                        </td>
+                    </tr>
                     <!-- /ko -->
                 </tbody>
             </table>

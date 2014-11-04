@@ -1,5 +1,5 @@
 ﻿"use strict";
-define(["knockout","komapping","helper","service"],function(ko,komapping,helper,service) {
+define(["knockout","komapping","../models/WoodVolumeItemModel","helper","service"],function(ko,komapping,WoodVolumeItemModel,helper,service) {
     return function WoodVolumeListModel() {
         var self=this;
 
@@ -17,8 +17,12 @@ define(["knockout","komapping","helper","service"],function(ko,komapping,helper,
         this.taluk_name=ko.observable("");
         this.village_id=ko.observable("");
         this.village_name=ko.observable("");
-        this.items = ko.observableArray();
+        this.volumes=ko.observableArray();
 
+
+        this.volume_count = ko.computed(function(){
+            return self.volumes().length;
+        });
 
         this.is_edit_mode=ko.observable(false);
         this.is_focus=ko.observable(false);
@@ -131,8 +135,12 @@ define(["knockout","komapping","helper","service"],function(ko,komapping,helper,
                 "type": "GET"
             }).done(function(json) {
                 komapping.fromJS(json,{},self);
-                self.user_airlines=json.user_airlines;
-                self.user_airports=json.user_airports;
+                $.each(json.items,function(i,item) {
+                    var itemModel=new WoodVolumeItemModel();
+                    komapping.fromJS(item,{},itemModel);
+                    self.volumes.push(itemModel);
+                });
+                self.setUpItemTable();
                 if(self.onAfterSelectWoodVolume) {
                     self.onAfterSelectWoodVolume();
                 }
@@ -142,6 +150,38 @@ define(["knockout","komapping","helper","service"],function(ko,komapping,helper,
         this.onBeforeSave=null;
         this.onAfterSave=null;
         this.saveURL="";
+
+        this.setUpItemTable=function() {
+            setTimeout(function() {
+                var $volumes=$("#volumes");
+                var $tbody=$("tbody",$volumes);
+                $("tr",$tbody).each(function() {
+                    var $tr=$(this);
+                    $(".save-btn",$tr)
+                    .unbind("click")
+                    .click(function() {
+                        var params=[];
+                        $(":input",$tr).each(function() {
+                            params[params.length]={ "name": $(this).attr("name"),"value": $(this).val() };
+                        });
+                        var url=helper.apiUrl("/WoodVolumeItem/Create");
+                        $.ajax({
+                            "url": url,
+                            "cache": false,
+                            "type": "POST",
+                            "data": params
+                        }).done(function(json) {
+                        }).fail(function(response) {
+                        }).always(function(jqxhr) {
+                        });
+                    });
+                });
+            },500);
+        }
+
+        this.saveItem=function(a,b) {
+            window.console.log(a,b);
+        }
         this.save=function(formElement) {
             self.success_result("");
             var $frm=$(formElement);

@@ -55,7 +55,7 @@
 		message: 'Are you sure?',
 		okBtnClass: 'btn btn-primary btn-sm input-mini',
 		okBtnText: 'OK',
-		cancelBtnClass: 'btn btn-danger btn-sm input-mini margin-left-10',
+		cancelBtnClass: 'btn btn-danger btn-sm input-mini m-l-10',
 		cancelBtnText: 'Cancel',
 		modalClass: '',
 		placement: 'bottom',

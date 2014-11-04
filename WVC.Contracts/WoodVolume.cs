@@ -21,5 +21,17 @@ namespace WVC.Contracts {
 		public string taluk_name { get; set; }
 		public Nullable<int> village_id { get; set; }
 		public string village_name { get; set; }
+
+        public List<WoodVolumeItem> items { get; set; }
 	}
+
+    public class WoodVolumeItem : BaseContract {
+        public int wood_volume_id { get; set; }
+        public string description { get; set; }
+        public Nullable<float> length { get; set; }
+        public Nullable<float> girth { get; set; }
+        public Nullable<float> volume { get; set; }
+        public Nullable<float> co_efficient { get; set; }
+        public Nullable<float> final_volume { get; set; }
+    }
 }

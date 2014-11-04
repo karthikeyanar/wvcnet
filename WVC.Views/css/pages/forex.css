@@ -2,6 +2,9 @@
 	width:120px;
 	float:left;
 }
+.fixed-col.currency-col{
+	width: 220px;
+}
 .dynamic-col {
 	max-width: 500px;
 	overflow: auto;
