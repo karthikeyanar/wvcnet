@@ -151,14 +151,8 @@ namespace WVC.Api.Models {
 			if (exitRole != "") {
 				string existRoleName = string.Empty;
 				switch (exitRole) {
-					case "EA": existRoleName = "WVC Admin"; break;
-					case "EM": existRoleName = "WVC Member"; break;
-					case "CA": existRoleName = "Company Admin"; break;
-					case "CM": existRoleName = "Company Member"; break;
-					case "GA": existRoleName = "Group Admin"; break;
-					case "GM": existRoleName = "Group Member"; break;
-					case "AA": existRoleName = "Agent Admin"; break;
-					case "AM": existRoleName = "Agent Member"; break;
+					case "admin": existRoleName = "WVC Admin"; break;
+					case "member": existRoleName = "WVC Member"; break;
 				}
 				if (existRoleName != "") {
 					error = existRoleName + " Role already added this email " + userName;

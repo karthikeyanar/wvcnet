@@ -103,6 +103,7 @@
     <Compile Include="Models\wvc_user.cs" />
     <Compile Include="Models\wvc_wood_volume.cs" />
     <Compile Include="Models\wvc_wood_volum_item.cs" />
+    <Compile Include="Partial\wvc_wood_volume_item.cs" />
     <Compile Include="Partial\wvc_wood_volume.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

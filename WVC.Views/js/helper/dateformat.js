@@ -42,26 +42,102 @@ var gsDayNames=new Array(
 );
 // the date format prototype
 Date.prototype.format=function(f) {
-	if(!this.valueOf())
-		return '&nbsp;';
+    if(!this.valueOf())
+        return '&nbsp;';
 
-	var d=this;
+    var d=this;
 
-	return f.replace(/(yyyy|mmmm|mmm|mm|dddd|ddd|dd|hh|nn|ss|a\/p)/gi,
+    return f.replace(/(yyyy|mmmm|mmm|mm|dddd|ddd|dd|hh|nn|ss|a\/p)/gi,
         function($1) {
-        	switch($1.toLowerCase()) {
-        		case 'yyyy': return d.getFullYear();
-        		case 'mmmm': return gsMonthNames[d.getMonth()];
-        		case 'mmm': return gsMonthNames[d.getMonth()].substr(0,3);
-        		case 'mm': return (d.getMonth()+1).zp(2);
-        		case 'dddd': return gsDayNames[d.getDay()];
-        		case 'ddd': return gsDayNames[d.getDay()].substr(0,3);
-        		case 'dd': return d.getDate().zp(2);
-        		case 'hh': return ((h=d.getHours()%12)?h:12).zp(2);
-        		case 'nn': return d.getMinutes().zp(2);
-        		case 'ss': return d.getSeconds().zp(2);
-        		case 'a/p': return d.getHours()<12?'AM':'PM';
-        	}
+            switch($1.toLowerCase()) {
+                case 'yyyy': return d.getFullYear();
+                case 'mmmm': return gsMonthNames[d.getMonth()];
+                case 'mmm': return gsMonthNames[d.getMonth()].substr(0,3);
+                case 'mm': return (d.getMonth()+1).zp(2);
+                case 'dddd': return gsDayNames[d.getDay()];
+                case 'ddd': return gsDayNames[d.getDay()].substr(0,3);
+                case 'dd': return d.getDate().zp(2);
+                case 'hh': return ((h=d.getHours()%12)?h:12).zp(2);
+                case 'nn': return d.getMinutes().zp(2);
+                case 'ss': return d.getSeconds().zp(2);
+                case 'a/p': return d.getHours()<12?'AM':'PM';
+            }
         }
     );
 }
+
+$.extend(window,{
+    removeSymbols: function(d) {
+        try {
+            if(d==null) { d=""; }
+            if(d==undefined) { d=""; }
+            var value=d.toString();
+            value=value.replace(/\$/g,'');
+            value=value.replace(/\%/g,'');
+            value=value.replace(/\,/g,'');
+            value=value.replace(/\(/g,'-');
+            value=value.replace(/\)/g,'');
+            return value;
+        } catch(ex) {
+            return "";
+        }
+    }
+    ,cFloat: function(value) {
+        if(typeof value==="number") return value;
+        value=removeSymbols(value);
+        var decimal=".";
+        var regex=new RegExp("[^0-9-"+decimal+"]",["g"]),
+			unformatted=parseFloat(
+				(""+value)
+				.replace(/\((.*)\)/,"-$1")
+				.replace(regex,'')
+				.replace(decimal,'.')
+			);
+        return !isNaN(unformatted)?unformatted:0;
+    }
+	,cInt: function(value) {
+	    if(typeof value==="number") return parseInt(value);
+	    value=removeSymbols(value);
+	    var decimal=".";
+	    var regex=new RegExp("[^0-9-"+decimal+"]",["g"]),
+			unformatted=parseInt(
+				(""+value)
+				.replace(/\((.*)\)/,"-$1")
+				.replace(regex,'')
+				.replace(decimal,'.')
+			);
+	    return !isNaN(unformatted)?unformatted:0;
+	}
+    ,formatCurrency: function(d,decimalPlace) {
+        var precision=cFloat(decimalPlace);
+        if(precision<=0) {
+            precision=2;
+        }
+        d=cFloat(d);
+        if(d==0) {
+            return "";
+        } else {
+            return accounting.formatMoney(d,{ precision: precision });
+        }
+    }
+	,formatPercentage: function(d) {
+	    d=cFloat(d);
+	    if(d==0) {
+	        return "";
+	    } else {
+	        return accounting.formatNumber(d,{ precision: 2 })+"%";
+	    }
+	}
+	,formatNumber: function(d,decimalPlace) {
+	    var precision=cFloat(decimalPlace);
+	    if(precision<=0) {
+	        precision=2;
+	    }
+	    d=cFloat(d);
+	    if(d==0) {
+	        return "";
+	    } else {
+	        return accounting.formatNumber(d,{ precision: precision });
+	    }
+	}
+});

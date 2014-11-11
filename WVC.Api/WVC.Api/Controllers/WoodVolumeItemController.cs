@@ -14,7 +14,7 @@ using WVC.Contracts;
 
 namespace WVC.Api.Controllers {
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "member")]
     [RoutePrefix("WoodVolumeItem")]
     public class WoodVolumeItemController:BaseApiController<WoodVolumeItem,wvc_wood_volum_item> {
         public WoodVolumeItemController() {

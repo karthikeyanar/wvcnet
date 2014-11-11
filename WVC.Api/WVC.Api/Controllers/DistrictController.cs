@@ -33,17 +33,17 @@ namespace WVC.Api.Controllers {
 			return _DistrictRepository.GetDistricts(term, pageSize);
 		}
 
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "member")]
 		public override IHttpActionResult Post(District contract) {
 			return base.Post(contract);
 		}
 
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "member")]
 		public override IHttpActionResult Put(int id, District contract) {
 			return base.Put(id, contract);
 		}
 
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "member")]
 		public override IHttpActionResult Delete(int id) {
 			return base.Delete(id);
 		}

@@ -16,6 +16,21 @@ namespace WVC.Models
                 .IsRequired()
                 .HasMaxLength(200);
 
+            this.Property(t => t.length)
+                .HasPrecision(19,4);
+
+            this.Property(t => t.girth)
+                .HasPrecision(19,4);
+
+            this.Property(t => t.volume)
+                .HasPrecision(19,4);
+
+            this.Property(t => t.co_efficient)
+                .HasPrecision(19,4);
+
+            this.Property(t => t.final_volume)
+                .HasPrecision(19,4);
+
             // Table & Column Mappings
             this.ToTable("wvc_wood_volum_item", "wvc");
             this.Property(t => t.id).HasColumnName("wood_volume_item_id");

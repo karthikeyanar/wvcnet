@@ -8,19 +8,7 @@ using System.Threading.Tasks;
 namespace WVC.Models {
 	[MetadataType(typeof(wvc_wood_volumeMD))]
 	public partial class wvc_wood_volume {
-
-		//public override void OnDeleting() {
-		//	using (EcamContext context = new EcamContext()) {
-		//		var country = context.wvc_wood_volume.Where(q => q.id == this.id).FirstOrDefault();
-		//		if (country != null) {
-		//			if (country.ec_airport.Count() > 0) {
-		//				this.Errors.Errors.Add(new ErrorInfo { ErrorMessage = "Cann't Delete! Child record found!" })
-		//			}
-		//		}
-		//	}
-		//	base.OnDeleting();
-		//}
-
+		 
 		public override void OnSaving() {
 			base.OnSaving();
 			if ((this.division_id ?? 0) <= 0) {

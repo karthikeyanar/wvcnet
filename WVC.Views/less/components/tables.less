@@ -5,8 +5,14 @@
   font-weight: @font-weight-bold;
   border-bottom: 0;
 }
-.table &>thead &>tr &>.no-line,.table &>tbody &>tr &>.no-line,.table &>tfoot &>tr &>.no-line {
+.table &>thead &>tr &>.no-l,.table &>tbody &>tr &>.no-l,.table &>tfoot &>tr &>.no-l {
     border: 0;
+}
+.table &>thead &>tr &>.no-l-b,.table &>tbody &>tr &>.no-l-b,.table &>tfoot &>tr &>.no-l-b {
+    border-bottom: 0;
+}
+.table &>thead &>tr &>.no-l-t,.table &>tbody &>tr &>.no-l-t,.table &>tfoot &>tr &>.no-l-t {
+    border-top: 0;
 }
 .table.table-primary.table-bordered {
     border: 1px solid @brand-primary;
@@ -64,9 +70,16 @@
 	border-color: #ddd;
 	color: #333;
 }
+.table.table-white > thead > tr > th {
+    background: #fff;
+    color: #333;
+}
 .table > thead > tr > th > div {
 	position: relative;
 	cursor: pointer;
+}
+.table > thead > tr > th.sort > div {
+	padding-right: 15px;
 }
 .table > thead > tr > th.sort > div:after {
 	position: absolute;

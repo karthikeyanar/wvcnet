@@ -28,10 +28,10 @@ namespace WVC.Contracts {
     public class WoodVolumeItem : BaseContract {
         public int wood_volume_id { get; set; }
         public string description { get; set; }
-        public Nullable<float> length { get; set; }
-        public Nullable<float> girth { get; set; }
-        public Nullable<float> volume { get; set; }
-        public Nullable<float> co_efficient { get; set; }
-        public Nullable<float> final_volume { get; set; }
+        public Nullable<decimal> length { get; set; }
+        public Nullable<decimal> girth { get; set; }
+        public Nullable<decimal> volume { get; set; }
+        public Nullable<decimal> co_efficient { get; set; }
+        public Nullable<decimal> final_volume { get; set; }
     }
 }

@@ -36,6 +36,7 @@
     top: 5px
 }
 .list-box-select {
+    height: 200px;
 	max-height: 200px;
 	overflow: auto;
 	overflow-x: hidden;
@@ -80,6 +81,9 @@
 .tree-expand.ex-minus {
 	background-position: 0 -20px;
 }
+.blockUI.blockOverlay {
+    display:none !important;
+}
 .blockUI.blockMsg.blockPage, 
 .blockUI.blockMsg.blockElement {
     left: 0 !important;
@@ -92,11 +96,12 @@
 }
 .blockUI.blockMsg.blockElement > .blockUI-message,
 .blockUI.blockMsg.blockPage > .blockUI-message {
-    background: #FEFD6B !important;
-    color: #000 !important;
+    background: #fffea2 !important;
+    color: #333 !important;
     min-width: 0;
     padding: 5px 10px;
     white-space: nowrap;
+    box-shadow: none;
 }
 .popover.confirmation {
     min-width: 150px;
@@ -106,4 +111,17 @@
 }
 .popover.confirmation .btn-group > .btn:first-child {
     margin-right: 15px;
+}
+.bootbox.modal .modal-dialog {
+    padding: 0;
+    margin: 0;
+}
+.btn.multiselect {
+      padding-right: 25px;
+    text-align: left;
+}
+.btn.multiselect > .caret {
+      position: absolute;
+    right: 10px;
+    top: 13px;
 }

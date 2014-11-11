@@ -20,7 +20,7 @@ define(["knockout","komapping","../models/WoodVolumeItemModel","helper","service
         this.volumes=ko.observableArray();
 
 
-        this.volume_count = ko.computed(function(){
+        this.volume_count=ko.computed(function() {
             return self.volumes().length;
         });
 
@@ -99,7 +99,7 @@ define(["knockout","komapping","../models/WoodVolumeItemModel","helper","service
         this.onDelete=null;
         this.deleteURL="";
         this.deleteWoodVolume=function() {
-            var url=self.deleteURL+"/"+self.id();
+            var url=helper.apiUrl("/WoodVolume/Delete/"+self.id());
             $.ajax({
                 "url": url,
                 "cache": false,
@@ -127,8 +127,7 @@ define(["knockout","komapping","../models/WoodVolumeItemModel","helper","service
             if(self.onBeforeSelectWoodVolume) {
                 self.onBeforeSelectWoodVolume();
             }
-            //var url=helper.apiUrl("/WoodVolume/Find/"+self.id());
-            var url=self.findURL+"/"+self.id();
+            var url=helper.apiUrl("/WoodVolume/Find/"+self.id());
             $.ajax({
                 "url": url,
                 "cache": false,
@@ -137,10 +136,12 @@ define(["knockout","komapping","../models/WoodVolumeItemModel","helper","service
                 komapping.fromJS(json,{},self);
                 $.each(json.items,function(i,item) {
                     var itemModel=new WoodVolumeItemModel();
+                    itemModel.onDelete = function(){
+                        self.volumes.remove(itemModel);
+                    }
                     komapping.fromJS(item,{},itemModel);
                     self.volumes.push(itemModel);
                 });
-                self.setUpItemTable();
                 if(self.onAfterSelectWoodVolume) {
                     self.onAfterSelectWoodVolume();
                 }
@@ -151,34 +152,7 @@ define(["knockout","komapping","../models/WoodVolumeItemModel","helper","service
         this.onAfterSave=null;
         this.saveURL="";
 
-        this.setUpItemTable=function() {
-            setTimeout(function() {
-                var $volumes=$("#volumes");
-                var $tbody=$("tbody",$volumes);
-                $("tr",$tbody).each(function() {
-                    var $tr=$(this);
-                    $(".save-btn",$tr)
-                    .unbind("click")
-                    .click(function() {
-                        var params=[];
-                        $(":input",$tr).each(function() {
-                            params[params.length]={ "name": $(this).attr("name"),"value": $(this).val() };
-                        });
-                        var url=helper.apiUrl("/WoodVolumeItem/Create");
-                        $.ajax({
-                            "url": url,
-                            "cache": false,
-                            "type": "POST",
-                            "data": params
-                        }).done(function(json) {
-                        }).fail(function(response) {
-                        }).always(function(jqxhr) {
-                        });
-                    });
-                });
-            },500);
-        }
-
+         
         this.saveItem=function(a,b) {
             window.console.log(a,b);
         }
@@ -186,10 +160,8 @@ define(["knockout","komapping","../models/WoodVolumeItemModel","helper","service
             self.success_result("");
             var $frm=$(formElement);
             if($frm.valid()) {
-                //var url=helper.apiUrl("/WoodVolume/Create");
-                var url=self.saveURL;
+                var url=helper.apiUrl("/WoodVolume/Create");
                 var type="POST";
-                //if(self.id()>0) { type="PUT"; url=helper.apiUrl("/WoodVolume/Update/")+self.id(); }
                 if(self.onBeforeSave) {
                     if(self.onBeforeSave(formElement)==false) {
                         if(self.onAfterSave)

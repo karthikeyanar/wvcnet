@@ -5,27 +5,27 @@ using System.Data.Entity.Infrastructure;
 // namespace CodeFirstClassGenerate.Models
 namespace WVC.Models
 {
-    //public partial class wvcContext : DbContext
+    //public partial class WVCContext : DbContext
 	public partial class WVCContext : DbContext
     {
-        //static wvcContext()
+        //static WVCContext()
 		static WVCContext()
         {
-            //Database.SetInitializer<wvcContext>(null);
+            //Database.SetInitializer<WVCContext>(null);
 			Database.SetInitializer<WVCContext>(null);
         }
 
-		//public wvcContext()
+		//public WVCContext()
 		public WVCContext()
-			//: base("Name=wvcContext")
+			//: base("Name=WVCContext")
 			: base("Name=WVCContext")
 		{
 		}
 
-        public DbSet<aspnetrole> aspnetroles { get; set; }
-        public DbSet<aspnetuserclaim> aspnetuserclaims { get; set; }
-        public DbSet<aspnetuserlogin> aspnetuserlogins { get; set; }
-        public DbSet<aspnetuser> aspnetusers { get; set; }
+        //public DbSet<aspnetrole> aspnetroles { get; set; }
+        //public DbSet<aspnetuserclaim> aspnetuserclaims { get; set; }
+        //public DbSet<aspnetuserlogin> aspnetuserlogins { get; set; }
+        //public DbSet<aspnetuser> aspnetusers { get; set; }
         public DbSet<district> districts { get; set; }
         public DbSet<division> divisions { get; set; }
         public DbSet<range> ranges { get; set; }
@@ -37,10 +37,10 @@ namespace WVC.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new aspnetroleMap());
-            modelBuilder.Configurations.Add(new aspnetuserclaimMap());
-            modelBuilder.Configurations.Add(new aspnetuserloginMap());
-            modelBuilder.Configurations.Add(new aspnetuserMap());
+            //modelBuilder.Configurations.Add(new aspnetroleMap());
+            //modelBuilder.Configurations.Add(new aspnetuserclaimMap());
+            //modelBuilder.Configurations.Add(new aspnetuserloginMap());
+            //modelBuilder.Configurations.Add(new aspnetuserMap());
             modelBuilder.Configurations.Add(new districtMap());
             modelBuilder.Configurations.Add(new divisionMap());
             modelBuilder.Configurations.Add(new rangeMap());

@@ -14,7 +14,7 @@ using WVC.Contracts;
 
 namespace WVC.Api.Controllers {
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "member")]
     [RoutePrefix("WoodVolume")]
     public class WoodVolumeController:BaseApiController<WoodVolume,wvc_wood_volume> {
 
@@ -62,7 +62,7 @@ namespace WVC.Api.Controllers {
         //	return _WoodVolumeRepository.GetWoodVolumes(term, pageSize);
         //}
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "member")]
         public override IHttpActionResult Post(WoodVolume contract) {
             if(contract == null) {
                 return BadRequest("Contract is null");
@@ -84,7 +84,7 @@ namespace WVC.Api.Controllers {
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "member")]
         public override IHttpActionResult Put(int id,WoodVolume contract) {
             if(contract == null) {
                 return BadRequest("Contract is null");
@@ -181,7 +181,7 @@ namespace WVC.Api.Controllers {
             return contract;
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "member")]
         public override IHttpActionResult Delete(int id) {
             return base.Delete(id);
         }

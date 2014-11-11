@@ -136,12 +136,7 @@ namespace Ecam.Models
                 }
             }
         }
-
-			if (type.ClrEquivalentType == typeof(decimal))
-		{
-			configLines.Add(".HasPrecision(19,4)");
-		}
-
+		 
             
         if(configLines.Any())
         {

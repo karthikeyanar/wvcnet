@@ -31,14 +31,15 @@ define(["knockout","komapping","helper","service"],function(ko,komapping,helper,
         this.onDelete=null;
         this.deleteURL="";
         this.deleteItem=function() {
-            var url=self.deleteURL+"/"+self.id();
+            if(self.onDelete) {
+                self.onDelete();
+            }
+            var url=helper.apiUrl("/WoodVolumeItem/Delete/")+self.id();
             $.ajax({
                 "url": url,
                 "cache": false,
                 "type": "DELETE",
             }).done(function(json) {
-                if(self.onDelete)
-                    self.onDelete();
             }).fail(function(jqxhr) {
                 alert(helper.deleteErrorMessage);
             });

@@ -33,17 +33,17 @@ namespace WVC.Api.Controllers {
 			return _TalukRepository.GetTaluks(term, pageSize);
 		}
 
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "member")]
 		public override IHttpActionResult Post(Taluk contract) {
 			return base.Post(contract);
 		}
 
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "member")]
 		public override IHttpActionResult Put(int id, Taluk contract) {
 			return base.Put(id, contract);
 		}
 
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "member")]
 		public override IHttpActionResult Delete(int id) {
 			return base.Delete(id);
 		}

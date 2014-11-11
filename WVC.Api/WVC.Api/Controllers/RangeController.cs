@@ -33,17 +33,17 @@ namespace WVC.Api.Controllers {
 			return _RangeRepository.GetRanges(term, pageSize);
 		}
 
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "member")]
 		public override IHttpActionResult Post(Range contract) {
 			return base.Post(contract);
 		}
 
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "member")]
 		public override IHttpActionResult Put(int id, Range contract) {
 			return base.Put(id, contract);
 		}
 
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "member")]
 		public override IHttpActionResult Delete(int id) {
 			return base.Delete(id);
 		}
