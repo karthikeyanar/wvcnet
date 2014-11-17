@@ -16,7 +16,7 @@ namespace WVC.Api.Repository {
 
 		public List<AutoCompleteList> GetVillages(string name, int pageSize = 1000) {
 			using (WVCContext context = new WVCContext()) {
-				IQueryable<village> ecVillages = context.villages;
+                IQueryable<wvc_village> ecVillages = context.wvc_village;
 				if (string.IsNullOrEmpty(name) == false) {
 					ecVillages = (from village in ecVillages
 								   where village.name.StartsWith(name)  

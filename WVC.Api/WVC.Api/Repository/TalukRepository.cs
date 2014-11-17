@@ -16,7 +16,7 @@ namespace WVC.Api.Repository {
 
 		public List<AutoCompleteList> GetTaluks(string name, int pageSize = 1000) {
 			using (WVCContext context = new WVCContext()) {
-				IQueryable<taluk> ecTaluks = context.taluks;
+                IQueryable<wvc_taluk> ecTaluks = context.wvc_taluk;
 				if (string.IsNullOrEmpty(name) == false) {
 					ecTaluks = (from taluk in ecTaluks
 								   where taluk.name.StartsWith(name)  

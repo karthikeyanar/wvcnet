@@ -16,7 +16,7 @@ namespace WVC.Api.Repository {
 
 		public List<AutoCompleteList> GetDistricts(string name, int pageSize = 1000) {
 			using (WVCContext context = new WVCContext()) {
-				IQueryable<district> ecDistricts = context.districts;
+                IQueryable<wvc_district> ecDistricts = context.wvc_district;
 				if (string.IsNullOrEmpty(name) == false) {
 					ecDistricts = (from district in ecDistricts
 								   where district.name.StartsWith(name)  

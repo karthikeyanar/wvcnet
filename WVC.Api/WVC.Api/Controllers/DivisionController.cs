@@ -15,7 +15,7 @@ using WVC.Contracts;
 namespace WVC.Api.Controllers {
 
 	[RoutePrefix("Division")]
-	public class DivisionController : BaseApiController<Division, division> {
+	public class DivisionController : BaseApiController<Division, wvc_division> {
 
 		public DivisionController()
 			: this(new DivisionRepository()) {

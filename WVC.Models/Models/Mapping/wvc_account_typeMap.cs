@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 // namespace CodeFirstClassGenerate.Models.Mapping
 namespace WVC.Models
 {
-    public partial class divisionMap : EntityTypeConfiguration<division>
+    public partial class wvc_account_typeMap : EntityTypeConfiguration<wvc_account_type>
     {
-        public divisionMap()
+        public wvc_account_typeMap()
         {
 		            // Primary Key
             this.HasKey(t => t.id);
@@ -17,8 +17,8 @@ namespace WVC.Models
                 .HasMaxLength(100);
 
             // Table & Column Mappings
-            this.ToTable("division", "wvc");
-            this.Property(t => t.id).HasColumnName("division_id");
+            this.ToTable("wvc_account_type", "wvc");
+            this.Property(t => t.id).HasColumnName("account_type_id");
             this.Property(t => t.name).HasColumnName("name");
 	       Ignore(t=>t.created_date);
 		       Ignore(t=>t.created_by);

@@ -5,7 +5,7 @@ using WVC.Framework;
 // namespace CodeFirstClassGenerate.Models
 namespace WVC.Models
 {
-    public partial class village : BaseEntity<village>
+    public partial class wvc_range : BaseEntity<wvc_range>
     {
 		
 				

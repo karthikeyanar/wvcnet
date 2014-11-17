@@ -47,6 +47,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\aspnetrole.cs" />
+    <Compile Include="Models\aspnetuser.cs" />
+    <Compile Include="Models\aspnetuserclaim.cs" />
+    <Compile Include="Models\aspnetuserlogin.cs" />
+    <Compile Include="Models\Mapping\aspnetroleMap.cs" />
+    <Compile Include="Models\Mapping\aspnetuserclaimMap.cs" />
+    <Compile Include="Models\Mapping\aspnetuserloginMap.cs" />
+    <Compile Include="Models\Mapping\aspnetuserMap.cs" />
+    <Compile Include="Models\Mapping\wvc_account_typeMap.cs" />
+    <Compile Include="Models\Mapping\wvc_districtMap.cs" />
+    <Compile Include="Models\Mapping\wvc_divisionMap.cs" />
+    <Compile Include="Models\Mapping\wvc_rangeMap.cs" />
+    <Compile Include="Models\Mapping\wvc_talukMap.cs" />
+    <Compile Include="Models\Mapping\wvc_userMap.cs" />
+    <Compile Include="Models\Mapping\wvc_villageMap.cs" />
+    <Compile Include="Models\Mapping\wvc_voucherMap.cs" />
+    <Compile Include="Models\Mapping\wvc_voucher_detailMap.cs" />
+    <Compile Include="Models\Mapping\wvc_voucher_inspectionMap.cs" />
+    <Compile Include="Models\Mapping\wvc_voucher_periodMap.cs" />
+    <Compile Include="Models\Mapping\wvc_voucher_typeMap.cs" />
+    <Compile Include="Models\Mapping\wvc_voucher_usersMap.cs" />
+    <Compile Include="Models\Mapping\wvc_wood_volumeMap.cs" />
+    <Compile Include="Models\Mapping\wvc_wood_volum_itemMap.cs" />
+    <Compile Include="Models\wvcContext.cs" />
+    <Compile Include="Models\wvc_account_type.cs" />
+    <Compile Include="Models\wvc_district.cs" />
+    <Compile Include="Models\wvc_division.cs" />
+    <Compile Include="Models\wvc_range.cs" />
+    <Compile Include="Models\wvc_taluk.cs" />
+    <Compile Include="Models\wvc_user.cs" />
+    <Compile Include="Models\wvc_village.cs" />
+    <Compile Include="Models\wvc_voucher.cs" />
+    <Compile Include="Models\wvc_voucher_detail.cs" />
+    <Compile Include="Models\wvc_voucher_inspection.cs" />
+    <Compile Include="Models\wvc_voucher_period.cs" />
+    <Compile Include="Models\wvc_voucher_type.cs" />
+    <Compile Include="Models\wvc_voucher_users.cs" />
+    <Compile Include="Models\wvc_wood_volume.cs" />
+    <Compile Include="Models\wvc_wood_volum_item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

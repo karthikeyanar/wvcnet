@@ -5,19 +5,19 @@ using System.Data.Entity.Infrastructure;
 // namespace CodeFirstClassGenerate.Models
 namespace WVC.Models
 {
-    //public partial class WVCContext : DbContext
+    //public partial class wvcContext : DbContext
 	public partial class WVCContext : DbContext
     {
-        //static WVCContext()
+        //static wvcContext()
 		static WVCContext()
         {
-            //Database.SetInitializer<WVCContext>(null);
+            //Database.SetInitializer<wvcContext>(null);
 			Database.SetInitializer<WVCContext>(null);
         }
 
-		//public WVCContext()
+		//public wvcContext()
 		public WVCContext()
-			//: base("Name=WVCContext")
+			//: base("Name=wvcContext")
 			: base("Name=WVCContext")
 		{
 		}
@@ -26,12 +26,19 @@ namespace WVC.Models
         //public DbSet<aspnetuserclaim> aspnetuserclaims { get; set; }
         //public DbSet<aspnetuserlogin> aspnetuserlogins { get; set; }
         //public DbSet<aspnetuser> aspnetusers { get; set; }
-        public DbSet<district> districts { get; set; }
-        public DbSet<division> divisions { get; set; }
-        public DbSet<range> ranges { get; set; }
-        public DbSet<taluk> taluks { get; set; }
-        public DbSet<village> villages { get; set; }
+        public DbSet<wvc_account_type> wvc_account_type { get; set; }
+        public DbSet<wvc_district> wvc_district { get; set; }
+        public DbSet<wvc_division> wvc_division { get; set; }
+        public DbSet<wvc_range> wvc_range { get; set; }
+        public DbSet<wvc_taluk> wvc_taluk { get; set; }
         public DbSet<wvc_user> wvc_user { get; set; }
+        public DbSet<wvc_village> wvc_village { get; set; }
+        public DbSet<wvc_voucher> wvc_voucher { get; set; }
+        public DbSet<wvc_voucher_detail> wvc_voucher_detail { get; set; }
+        public DbSet<wvc_voucher_inspection> wvc_voucher_inspection { get; set; }
+        public DbSet<wvc_voucher_period> wvc_voucher_period { get; set; }
+        public DbSet<wvc_voucher_type> wvc_voucher_type { get; set; }
+        public DbSet<wvc_voucher_users> wvc_voucher_users { get; set; }
         public DbSet<wvc_wood_volum_item> wvc_wood_volum_item { get; set; }
         public DbSet<wvc_wood_volume> wvc_wood_volume { get; set; }
 
@@ -41,12 +48,19 @@ namespace WVC.Models
             //modelBuilder.Configurations.Add(new aspnetuserclaimMap());
             //modelBuilder.Configurations.Add(new aspnetuserloginMap());
             //modelBuilder.Configurations.Add(new aspnetuserMap());
-            modelBuilder.Configurations.Add(new districtMap());
-            modelBuilder.Configurations.Add(new divisionMap());
-            modelBuilder.Configurations.Add(new rangeMap());
-            modelBuilder.Configurations.Add(new talukMap());
-            modelBuilder.Configurations.Add(new villageMap());
+            modelBuilder.Configurations.Add(new wvc_account_typeMap());
+            modelBuilder.Configurations.Add(new wvc_districtMap());
+            modelBuilder.Configurations.Add(new wvc_divisionMap());
+            modelBuilder.Configurations.Add(new wvc_rangeMap());
+            modelBuilder.Configurations.Add(new wvc_talukMap());
             modelBuilder.Configurations.Add(new wvc_userMap());
+            modelBuilder.Configurations.Add(new wvc_villageMap());
+            modelBuilder.Configurations.Add(new wvc_voucherMap());
+            modelBuilder.Configurations.Add(new wvc_voucher_detailMap());
+            modelBuilder.Configurations.Add(new wvc_voucher_inspectionMap());
+            modelBuilder.Configurations.Add(new wvc_voucher_periodMap());
+            modelBuilder.Configurations.Add(new wvc_voucher_typeMap());
+            modelBuilder.Configurations.Add(new wvc_voucher_usersMap());
             modelBuilder.Configurations.Add(new wvc_wood_volum_itemMap());
             modelBuilder.Configurations.Add(new wvc_wood_volumeMap());
         }

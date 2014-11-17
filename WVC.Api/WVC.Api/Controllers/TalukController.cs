@@ -15,7 +15,7 @@ using WVC.Contracts;
 namespace WVC.Api.Controllers {
 
 	[RoutePrefix("Taluk")]
-	public class TalukController : BaseApiController<Taluk, division> {
+	public class TalukController : BaseApiController<Taluk, wvc_taluk> {
 
 		public TalukController()
 			: this(new TalukRepository()) {

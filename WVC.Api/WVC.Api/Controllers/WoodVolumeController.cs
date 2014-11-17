@@ -110,7 +110,7 @@ namespace WVC.Api.Controllers {
         private WoodVolume SetUpContract(WoodVolume contract) {
             if((contract.division_id ?? 0) <= 0) {
                 if(string.IsNullOrEmpty(contract.division_name) == false) {
-                    BaseRepository<Division,division> divisionRepository = new BaseRepository<Division,division>();
+                    BaseRepository<Division,wvc_division> divisionRepository = new BaseRepository<Division,wvc_division>();
                     Division division = divisionRepository.Find(new Division { name = contract.division_name }).FirstOrDefault();
                     if(division != null) {
                         contract.division_id = division.id;
@@ -124,7 +124,7 @@ namespace WVC.Api.Controllers {
             }
             if((contract.district_id ?? 0) <= 0) {
                 if(string.IsNullOrEmpty(contract.district_name) == false) {
-                    BaseRepository<District,district> districtRepository = new BaseRepository<District,district>();
+                    BaseRepository<District,wvc_district> districtRepository = new BaseRepository<District,wvc_district>();
                     District district = districtRepository.Find(new District { name = contract.district_name }).FirstOrDefault();
                     if(district != null) {
                         contract.district_id = district.id;
@@ -138,7 +138,7 @@ namespace WVC.Api.Controllers {
             }
             if((contract.range_id ?? 0) <= 0) {
                 if(string.IsNullOrEmpty(contract.range_name) == false) {
-                    BaseRepository<Range,range> rangeRepository = new BaseRepository<Range,range>();
+                    BaseRepository<Range,wvc_range> rangeRepository = new BaseRepository<Range,wvc_range>();
                     Range range = rangeRepository.Find(new Range { name = contract.range_name }).FirstOrDefault();
                     if(range != null) {
                         contract.range_id = range.id;
@@ -152,7 +152,7 @@ namespace WVC.Api.Controllers {
             }
             if((contract.taluk_id ?? 0) <= 0) {
                 if(string.IsNullOrEmpty(contract.taluk_name) == false) {
-                    BaseRepository<Taluk,taluk> talukRepository = new BaseRepository<Taluk,taluk>();
+                    BaseRepository<Taluk,wvc_taluk> talukRepository = new BaseRepository<Taluk,wvc_taluk>();
                     Taluk taluk = talukRepository.Find(new Taluk { name = contract.taluk_name }).FirstOrDefault();
                     if(taluk != null) {
                         contract.taluk_id = taluk.id;
@@ -166,7 +166,7 @@ namespace WVC.Api.Controllers {
             }
             if((contract.village_id ?? 0) <= 0) {
                 if(string.IsNullOrEmpty(contract.village_name) == false) {
-                    BaseRepository<Village,village> villageRepository = new BaseRepository<Village,village>();
+                    BaseRepository<Village,wvc_village> villageRepository = new BaseRepository<Village,wvc_village>();
                     Village village = villageRepository.Find(new Village { name = contract.village_name }).FirstOrDefault();
                     if(village != null) {
                         contract.village_id = village.id;

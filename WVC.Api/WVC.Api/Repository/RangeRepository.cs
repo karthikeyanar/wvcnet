@@ -16,7 +16,7 @@ namespace WVC.Api.Repository {
 
 		public List<AutoCompleteList> GetRanges(string name, int pageSize = 1000) {
 			using (WVCContext context = new WVCContext()) {
-				IQueryable<range> ecRanges = context.ranges;
+                IQueryable<wvc_range> ecRanges = context.wvc_range;
 				if (string.IsNullOrEmpty(name) == false) {
 					ecRanges = (from range in ecRanges
 								   where range.name.StartsWith(name)  

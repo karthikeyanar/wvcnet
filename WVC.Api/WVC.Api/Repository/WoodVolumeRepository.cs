@@ -39,15 +39,15 @@ namespace WVC.Api.Repository {
                     woodVolumes = woodVolumes.Where(q => q.taluk_id == criteria.taluk_id);
                 }
                 IQueryable<WoodVolume> query = (from volume in woodVolumes
-                                                join div in context.divisions on volume.division_id equals div.id into divisions
+                                                join div in context.wvc_division on volume.division_id equals div.id into divisions
                                                 from div in divisions.DefaultIfEmpty()
-                                                join dis in context.districts on volume.division_id equals dis.id into districts
+                                                join dis in context.wvc_district on volume.division_id equals dis.id into districts
                                                 from dis in districts.DefaultIfEmpty()
-                                                join ran in context.ranges on volume.range_id equals ran.id into ranges
+                                                join ran in context.wvc_range on volume.range_id equals ran.id into ranges
                                                 from ran in ranges.DefaultIfEmpty()
-                                                join tal in context.taluks on volume.taluk_id equals tal.id into taluks
+                                                join tal in context.wvc_taluk on volume.taluk_id equals tal.id into taluks
                                                 from tal in taluks.DefaultIfEmpty()
-                                                join vil in context.villages on volume.village_id equals vil.id into villages
+                                                join vil in context.wvc_village on volume.village_id equals vil.id into villages
                                                 from vil in villages.DefaultIfEmpty()
                                                 select new WoodVolume {
                                                     id = volume.id,

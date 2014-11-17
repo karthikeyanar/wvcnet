@@ -5,7 +5,7 @@ using WVC.Framework;
 // namespace CodeFirstClassGenerate.Models
 namespace WVC.Models
 {
-    public partial class division : BaseEntity<division>
+    public partial class wvc_voucher_type : BaseEntity<wvc_voucher_type>
     {
 		
 				

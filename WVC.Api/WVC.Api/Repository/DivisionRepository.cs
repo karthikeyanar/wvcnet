@@ -16,7 +16,7 @@ namespace WVC.Api.Repository {
 
 		public List<AutoCompleteList> GetDivisions(string name, int pageSize = 1000) {
 			using (WVCContext context = new WVCContext()) {
-				IQueryable<division> ecDivisions = context.divisions;
+                IQueryable<wvc_division> ecDivisions = context.wvc_division;
 				if (string.IsNullOrEmpty(name) == false) {
 					ecDivisions = (from division in ecDivisions
 								   where division.name.StartsWith(name)  

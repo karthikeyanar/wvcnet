@@ -15,7 +15,7 @@ using WVC.Contracts;
 namespace WVC.Api.Controllers {
 
 	[RoutePrefix("Range")]
-	public class RangeController : BaseApiController<Range, division> {
+	public class RangeController : BaseApiController<Range, wvc_range> {
 
 		public RangeController()
 			: this(new RangeRepository()) {

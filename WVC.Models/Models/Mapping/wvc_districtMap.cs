@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 // namespace CodeFirstClassGenerate.Models.Mapping
 namespace WVC.Models
 {
-    public partial class districtMap : EntityTypeConfiguration<district>
+    public partial class wvc_districtMap : EntityTypeConfiguration<wvc_district>
     {
-        public districtMap()
+        public wvc_districtMap()
         {
 		            // Primary Key
             this.HasKey(t => t.id);
@@ -17,7 +17,7 @@ namespace WVC.Models
                 .HasMaxLength(100);
 
             // Table & Column Mappings
-            this.ToTable("district", "wvc");
+            this.ToTable("wvc_district", "wvc");
             this.Property(t => t.id).HasColumnName("district_id");
             this.Property(t => t.name).HasColumnName("name");
 	       Ignore(t=>t.created_date);

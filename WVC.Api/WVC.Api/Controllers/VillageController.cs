@@ -15,7 +15,7 @@ using WVC.Contracts;
 namespace WVC.Api.Controllers {
 
 	[RoutePrefix("Village")]
-	public class VillageController : BaseApiController<Village, division> {
+	public class VillageController : BaseApiController<Village, wvc_village> {
 
 		public VillageController()
 			: this(new VillageRepository()) {

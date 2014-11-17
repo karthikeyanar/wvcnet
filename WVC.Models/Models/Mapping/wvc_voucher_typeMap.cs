@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 // namespace CodeFirstClassGenerate.Models.Mapping
 namespace WVC.Models
 {
-    public partial class rangeMap : EntityTypeConfiguration<range>
+    public partial class wvc_voucher_typeMap : EntityTypeConfiguration<wvc_voucher_type>
     {
-        public rangeMap()
+        public wvc_voucher_typeMap()
         {
 		            // Primary Key
             this.HasKey(t => t.id);
@@ -17,8 +17,8 @@ namespace WVC.Models
                 .HasMaxLength(100);
 
             // Table & Column Mappings
-            this.ToTable("range", "wvc");
-            this.Property(t => t.id).HasColumnName("range_id");
+            this.ToTable("wvc_voucher_type", "wvc");
+            this.Property(t => t.id).HasColumnName("voucher_type_id");
             this.Property(t => t.name).HasColumnName("name");
 	       Ignore(t=>t.created_date);
 		       Ignore(t=>t.created_by);

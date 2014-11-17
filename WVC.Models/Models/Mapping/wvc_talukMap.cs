@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 // namespace CodeFirstClassGenerate.Models.Mapping
 namespace WVC.Models
 {
-    public partial class villageMap : EntityTypeConfiguration<village>
+    public partial class wvc_talukMap : EntityTypeConfiguration<wvc_taluk>
     {
-        public villageMap()
+        public wvc_talukMap()
         {
 		            // Primary Key
             this.HasKey(t => t.id);
@@ -17,8 +17,8 @@ namespace WVC.Models
                 .HasMaxLength(100);
 
             // Table & Column Mappings
-            this.ToTable("village", "wvc");
-            this.Property(t => t.id).HasColumnName("village_id");
+            this.ToTable("wvc_taluk", "wvc");
+            this.Property(t => t.id).HasColumnName("taluk_id");
             this.Property(t => t.name).HasColumnName("name");
 	       Ignore(t=>t.created_date);
 		       Ignore(t=>t.created_by);
