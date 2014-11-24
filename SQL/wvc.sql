@@ -27,18 +27,19 @@ USE `wvc`;
 DROP TABLE IF EXISTS `wvc_wood_volum_item`;
 DROP TABLE IF EXISTS `wvc_wood_volume`;
 DROP TABLE IF EXISTS `wvc_voucher_users`;
-DROP TABLE IF EXISTS `wvc_voucher_type`;
 DROP TABLE IF EXISTS `wvc_voucher_period`;
 DROP TABLE IF EXISTS `wvc_voucher_inspection`;
 DROP TABLE IF EXISTS `wvc_voucher_detail`;
 DROP TABLE IF EXISTS `wvc_voucher`;
+DROP TABLE IF EXISTS `wvc_voucher_type`;
+DROP TABLE IF EXISTS `wvc_village`;
 DROP TABLE IF EXISTS `wvc_user`;
+DROP TABLE IF EXISTS `wvc_taluk`;
+DROP TABLE IF EXISTS `wvc_range`;
+DROP TABLE IF EXISTS `wvc_quantity_type`;
+DROP TABLE IF EXISTS `wvc_division`;
+DROP TABLE IF EXISTS `wvc_district`;
 DROP TABLE IF EXISTS `wvc_account_type`;
-DROP TABLE IF EXISTS `village`;
-DROP TABLE IF EXISTS `taluk`;
-DROP TABLE IF EXISTS `range`;
-DROP TABLE IF EXISTS `division`;
-DROP TABLE IF EXISTS `district`;
 DROP TABLE IF EXISTS `aspnetuserroles`;
 DROP TABLE IF EXISTS `aspnetuserlogins`;
 DROP TABLE IF EXISTS `aspnetuserclaims`;
@@ -135,10 +136,24 @@ COMMENT=''
 ;
 
 #
-# Structure for the `district` table : 
+# Structure for the `wvc_account_type` table : 
 #
 
-CREATE TABLE `district` (
+CREATE TABLE `wvc_account_type` (
+  `account_type_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY USING BTREE (`account_type_id`) COMMENT '',
+  UNIQUE INDEX `name` USING BTREE (`name`) COMMENT ''
+)ENGINE=InnoDB
+AUTO_INCREMENT=1 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+COMMENT=''
+;
+
+#
+# Structure for the `wvc_district` table : 
+#
+
+CREATE TABLE `wvc_district` (
   `district_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY USING BTREE (`district_id`) COMMENT '',
@@ -149,10 +164,10 @@ COMMENT=''
 ;
 
 #
-# Structure for the `division` table : 
+# Structure for the `wvc_division` table : 
 #
 
-CREATE TABLE `division` (
+CREATE TABLE `wvc_division` (
   `division_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY USING BTREE (`division_id`) COMMENT '',
@@ -163,10 +178,24 @@ COMMENT=''
 ;
 
 #
-# Structure for the `range` table : 
+# Structure for the `wvc_quantity_type` table : 
 #
 
-CREATE TABLE `range` (
+CREATE TABLE `wvc_quantity_type` (
+  `quantity_type_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(20) COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY USING BTREE (`quantity_type_id`) COMMENT '',
+  UNIQUE INDEX `name` USING BTREE (`name`) COMMENT ''
+)ENGINE=InnoDB
+AUTO_INCREMENT=1 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+COMMENT=''
+;
+
+#
+# Structure for the `wvc_range` table : 
+#
+
+CREATE TABLE `wvc_range` (
   `range_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY USING BTREE (`range_id`) COMMENT '',
@@ -177,43 +206,16 @@ COMMENT=''
 ;
 
 #
-# Structure for the `taluk` table : 
+# Structure for the `wvc_taluk` table : 
 #
 
-CREATE TABLE `taluk` (
+CREATE TABLE `wvc_taluk` (
   `taluk_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY USING BTREE (`taluk_id`) COMMENT '',
   UNIQUE INDEX `name` USING BTREE (`name`) COMMENT ''
 )ENGINE=InnoDB
 AUTO_INCREMENT=3 AVG_ROW_LENGTH=8192 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
-COMMENT=''
-;
-
-#
-# Structure for the `village` table : 
-#
-
-CREATE TABLE `village` (
-  `village_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY USING BTREE (`village_id`) COMMENT '',
-  UNIQUE INDEX `name` USING BTREE (`name`) COMMENT ''
-)ENGINE=InnoDB
-AUTO_INCREMENT=3 AVG_ROW_LENGTH=8192 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
-COMMENT=''
-;
-
-#
-# Structure for the `wvc_account_type` table : 
-#
-
-CREATE TABLE `wvc_account_type` (
-  `account_type_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY USING BTREE (`account_type_id`) COMMENT ''
-)ENGINE=InnoDB
-AUTO_INCREMENT=1 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
 COMMENT=''
 ;
 
@@ -238,6 +240,34 @@ COMMENT=''
 ;
 
 #
+# Structure for the `wvc_village` table : 
+#
+
+CREATE TABLE `wvc_village` (
+  `village_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY USING BTREE (`village_id`) COMMENT '',
+  UNIQUE INDEX `name` USING BTREE (`name`) COMMENT ''
+)ENGINE=InnoDB
+AUTO_INCREMENT=3 AVG_ROW_LENGTH=8192 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+COMMENT=''
+;
+
+#
+# Structure for the `wvc_voucher_type` table : 
+#
+
+CREATE TABLE `wvc_voucher_type` (
+  `voucher_type_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY USING BTREE (`voucher_type_id`) COMMENT '',
+  UNIQUE INDEX `name` USING BTREE (`name`) COMMENT ''
+)ENGINE=InnoDB
+AUTO_INCREMENT=1 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+COMMENT=''
+;
+
+#
 # Structure for the `wvc_voucher` table : 
 #
 
@@ -246,6 +276,7 @@ CREATE TABLE `wvc_voucher` (
   `voucher_type_id` INTEGER(11) NOT NULL,
   `voucher_no` INTEGER(11) NOT NULL,
   `voucher_date` DATE NOT NULL,
+  `user_id` INTEGER(11) NOT NULL,
   `name` VARCHAR(50) COLLATE utf8_general_ci NOT NULL,
   `sonof` VARCHAR(50) COLLATE utf8_general_ci DEFAULT NULL,
   `address` VARCHAR(1000) COLLATE utf8_general_ci NOT NULL,
@@ -253,7 +284,7 @@ CREATE TABLE `wvc_voucher` (
   `description` VARCHAR(1000) COLLATE utf8_general_ci DEFAULT NULL,
   `additional_description` VARCHAR(1000) COLLATE utf8_general_ci DEFAULT NULL,
   `quantity` DECIMAL(19,4) NOT NULL,
-  `quantity_type` VARCHAR(5) COLLATE utf8_general_ci DEFAULT NULL,
+  `quantity_type_id` INTEGER(11) DEFAULT NULL,
   `rate` DECIMAL(19,4) NOT NULL,
   `per` INTEGER(11) NOT NULL,
   `per_type` VARCHAR(5) COLLATE utf8_general_ci NOT NULL,
@@ -266,7 +297,20 @@ CREATE TABLE `wvc_voucher` (
   `agreement_date` DATE DEFAULT NULL,
   `book_no` VARCHAR(20) COLLATE utf8_general_ci DEFAULT NULL,
   `page_no` VARCHAR(20) COLLATE utf8_general_ci DEFAULT NULL,
-  PRIMARY KEY USING BTREE (`voucher_id`) COMMENT ''
+  PRIMARY KEY USING BTREE (`voucher_id`) COMMENT '',
+   INDEX `user_id` USING BTREE (`user_id`) COMMENT '',
+   INDEX `wvc_voucher_idx` USING BTREE (`user_id`, `voucher_date`) COMMENT '',
+   INDEX `voucher_type_id` USING BTREE (`voucher_type_id`) COMMENT '',
+   INDEX `account_type_id` USING BTREE (`account_type_id`) COMMENT '',
+   INDEX `range_id` USING BTREE (`range_id`) COMMENT '',
+   INDEX `district_id` USING BTREE (`district_id`) COMMENT '',
+   INDEX `quantity_type_id` USING BTREE (`quantity_type_id`) COMMENT '',
+  CONSTRAINT `wvc_voucher_fk_account_type` FOREIGN KEY (`account_type_id`) REFERENCES `wvc_account_type` (`account_type_id`),
+  CONSTRAINT `wvc_voucher_fk_district` FOREIGN KEY (`district_id`) REFERENCES `wvc_district` (`district_id`),
+  CONSTRAINT `wvc_voucher_fk_quantity_type` FOREIGN KEY (`quantity_type_id`) REFERENCES `wvc_quantity_type` (`quantity_type_id`),
+  CONSTRAINT `wvc_voucher_fk_range` FOREIGN KEY (`range_id`) REFERENCES `wvc_range` (`range_id`),
+  CONSTRAINT `wvc_voucher_fk_type` FOREIGN KEY (`voucher_type_id`) REFERENCES `wvc_voucher_type` (`voucher_type_id`),
+  CONSTRAINT `wvc_voucher_fk_user` FOREIGN KEY (`user_id`) REFERENCES `wvc_user` (`user_id`) ON DELETE CASCADE
 )ENGINE=InnoDB
 AUTO_INCREMENT=1 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
 COMMENT=''
@@ -277,7 +321,7 @@ COMMENT=''
 #
 
 CREATE TABLE `wvc_voucher_detail` (
-  `voucher_detail_id` VARCHAR(200) COLLATE utf8_general_ci NOT NULL,
+  `voucher_detail_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` INTEGER(11) NOT NULL,
   `description` VARCHAR(1000) COLLATE utf8_general_ci NOT NULL,
   `detail_type_value` DECIMAL(19,4) DEFAULT NULL,
@@ -294,7 +338,7 @@ CREATE TABLE `wvc_voucher_detail` (
    INDEX `voucher_id` USING BTREE (`voucher_id`) COMMENT '',
   CONSTRAINT `wvc_voucher_detail_voucher` FOREIGN KEY (`voucher_id`) REFERENCES `wvc_voucher` (`voucher_id`) ON DELETE CASCADE
 )ENGINE=InnoDB
-CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+AUTO_INCREMENT=1 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
 COMMENT=''
 ;
 
@@ -303,7 +347,7 @@ COMMENT=''
 #
 
 CREATE TABLE `wvc_voucher_inspection` (
-  `voucher_inspection_id` VARCHAR(200) COLLATE utf8_general_ci NOT NULL,
+  `voucher_inspection_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` INTEGER(11) NOT NULL,
   `inspection_date` DATE NOT NULL,
   PRIMARY KEY USING BTREE (`voucher_inspection_id`) COMMENT '',
@@ -311,7 +355,7 @@ CREATE TABLE `wvc_voucher_inspection` (
    INDEX `voucher_id` USING BTREE (`voucher_id`) COMMENT '',
   CONSTRAINT `wvc_voucher_inspection_voucher` FOREIGN KEY (`voucher_id`) REFERENCES `wvc_voucher` (`voucher_id`) ON DELETE CASCADE
 )ENGINE=InnoDB
-CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+AUTO_INCREMENT=1 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
 COMMENT=''
 ;
 
@@ -320,7 +364,7 @@ COMMENT=''
 #
 
 CREATE TABLE `wvc_voucher_period` (
-  `voucher_period_id` VARCHAR(200) COLLATE utf8_general_ci NOT NULL,
+  `voucher_period_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` INTEGER(11) DEFAULT NULL,
   `start_date` DATE DEFAULT NULL,
   `end_date` DATE DEFAULT NULL,
@@ -328,19 +372,6 @@ CREATE TABLE `wvc_voucher_period` (
   UNIQUE INDEX `voucher_period_id` USING BTREE (`voucher_period_id`) COMMENT '',
    INDEX `voucher_id` USING BTREE (`voucher_id`) COMMENT '',
   CONSTRAINT `wvc_voucher_period_voucher` FOREIGN KEY (`voucher_id`) REFERENCES `wvc_voucher` (`voucher_id`) ON DELETE CASCADE
-)ENGINE=InnoDB
-CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
-COMMENT=''
-;
-
-#
-# Structure for the `wvc_voucher_type` table : 
-#
-
-CREATE TABLE `wvc_voucher_type` (
-  `voucher_type_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY USING BTREE (`voucher_type_id`) COMMENT ''
 )ENGINE=InnoDB
 AUTO_INCREMENT=1 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
 COMMENT=''
@@ -351,13 +382,13 @@ COMMENT=''
 #
 
 CREATE TABLE `wvc_voucher_users` (
-  `voucher_user_id` VARCHAR(200) COLLATE utf8_general_ci NOT NULL,
+  `voucher_user_id` INTEGER(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` INTEGER(11) NOT NULL,
   `name` VARCHAR(50) COLLATE utf8_general_ci DEFAULT NULL,
   `sonof` VARCHAR(50) COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY USING BTREE (`voucher_user_id`) COMMENT ''
 )ENGINE=InnoDB
-CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+AUTO_INCREMENT=1 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
 COMMENT=''
 ;
 
@@ -377,7 +408,17 @@ CREATE TABLE `wvc_wood_volume` (
   `village_id` INTEGER(11) DEFAULT NULL,
   PRIMARY KEY USING BTREE (`wood_volume_id`) COMMENT '',
    INDEX `wvc_wood_volume_fk_user` USING BTREE (`user_id`) COMMENT '',
-  CONSTRAINT `wvc_wood_volume_fk_user` FOREIGN KEY (`user_id`) REFERENCES `wvc_user` (`user_id`) ON DELETE CASCADE
+   INDEX `division_id` USING BTREE (`division_id`) COMMENT '',
+   INDEX `district_id` USING BTREE (`district_id`) COMMENT '',
+   INDEX `range_id` USING BTREE (`range_id`) COMMENT '',
+   INDEX `taluk_id` USING BTREE (`taluk_id`) COMMENT '',
+   INDEX `village_id` USING BTREE (`village_id`) COMMENT '',
+  CONSTRAINT `wvc_wood_volume_fk_district` FOREIGN KEY (`district_id`) REFERENCES `wvc_district` (`district_id`),
+  CONSTRAINT `wvc_wood_volume_fk_division` FOREIGN KEY (`division_id`) REFERENCES `wvc_division` (`division_id`),
+  CONSTRAINT `wvc_wood_volume_fk_range` FOREIGN KEY (`range_id`) REFERENCES `wvc_range` (`range_id`),
+  CONSTRAINT `wvc_wood_volume_fk_taluk` FOREIGN KEY (`taluk_id`) REFERENCES `wvc_taluk` (`taluk_id`),
+  CONSTRAINT `wvc_wood_volume_fk_user` FOREIGN KEY (`user_id`) REFERENCES `wvc_user` (`user_id`) ON DELETE CASCADE,
+  CONSTRAINT `wvc_wood_volume_fk_village` FOREIGN KEY (`village_id`) REFERENCES `wvc_village` (`village_id`)
 )ENGINE=InnoDB
 AUTO_INCREMENT=2 AVG_ROW_LENGTH=8192 CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
 COMMENT=''
@@ -432,53 +473,43 @@ INSERT INTO `aspnetuserroles` (`UserId`, `RoleId`) VALUES
 COMMIT;
 
 #
-# Data for the `district` table  (LIMIT -497,500)
+# Data for the `wvc_district` table  (LIMIT -497,500)
 #
 
-INSERT INTO `district` (`district_id`, `name`) VALUES
+INSERT INTO `wvc_district` (`district_id`, `name`) VALUES
 
   (1,'dis1'),
   (2,'dis2');
 COMMIT;
 
 #
-# Data for the `division` table  (LIMIT -497,500)
+# Data for the `wvc_division` table  (LIMIT -497,500)
 #
 
-INSERT INTO `division` (`division_id`, `name`) VALUES
+INSERT INTO `wvc_division` (`division_id`, `name`) VALUES
 
   (1,'div1'),
   (2,'div2');
 COMMIT;
 
 #
-# Data for the `range` table  (LIMIT -497,500)
+# Data for the `wvc_range` table  (LIMIT -497,500)
 #
 
-INSERT INTO `range` (`range_id`, `name`) VALUES
+INSERT INTO `wvc_range` (`range_id`, `name`) VALUES
 
   (1,'ran1'),
   (2,'ran2');
 COMMIT;
 
 #
-# Data for the `taluk` table  (LIMIT -497,500)
+# Data for the `wvc_taluk` table  (LIMIT -497,500)
 #
 
-INSERT INTO `taluk` (`taluk_id`, `name`) VALUES
+INSERT INTO `wvc_taluk` (`taluk_id`, `name`) VALUES
 
   (1,'tal1'),
   (2,'tal2');
-COMMIT;
-
-#
-# Data for the `village` table  (LIMIT -497,500)
-#
-
-INSERT INTO `village` (`village_id`, `name`) VALUES
-
-  (1,'vil1'),
-  (2,'vil2');
 COMMIT;
 
 #
@@ -488,6 +519,16 @@ COMMIT;
 INSERT INTO `wvc_user` (`user_id`, `aspnetuser_id`, `first_name`, `last_name`, `is_active`, `created_by`, `created_date`, `last_updated_by`, `last_updated_date`) VALUES
 
   (1,'4868b16e-7ca7-4735-8bf5-4a85be66208d','admin',NULL,1,NULL,'2014-09-04 13:14:29',NULL,NULL);
+COMMIT;
+
+#
+# Data for the `wvc_village` table  (LIMIT -497,500)
+#
+
+INSERT INTO `wvc_village` (`village_id`, `name`) VALUES
+
+  (1,'vil1'),
+  (2,'vil2');
 COMMIT;
 
 #
