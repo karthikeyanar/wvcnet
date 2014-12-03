@@ -1,3 +1,7 @@
-﻿lessc -x E:\Projects\ecams\Ecam.Views\less\components\components.less > E:\Projects\ecams\Ecam.Views\css\components.min.css
-lessc -x E:\Projects\ecams\Ecam.Views\less\site\site.less > E:\Projects\ecams\Ecam.Views\css\site.min.css
-lessc -x E:\Projects\ecams\Ecam.Views\less\themes\sky-blue.less > E:\Projects\ecams\Ecam.Views\css\themes\sky-blue.min.css
+﻿lessc -x E:\Projects\wvcnet\WVC.Views\less\components\components.less > E:\Projects\wvcnet\WVC.Views\css\components.min.css
+lessc E:\Projects\wvcnet\WVC.Views\less\components\components.less > E:\Projects\wvcnet\WVC.Views\css\components.css
+lessc -x E:\Projects\wvcnet\WVC.Views\less\site\site.less > E:\Projects\wvcnet\WVC.Views\css\site.min.css
+lessc -x E:\Projects\wvcnet\WVC.Views\less\themes\sky-blue.less > E:\Projects\wvcnet\WVC.Views\css\themes\sky-blue.min.css
+
+
+ 

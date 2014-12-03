@@ -131,14 +131,19 @@
   <ItemGroup>
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\components.css" />
     <Content Include="css\components.min.css" />
     <Content Include="css\custom.css" />
-    <Content Include="css\pages\forex.css" />
     <Content Include="css\pages\login.css" />
     <Content Include="css\plugins\bootstrap-datepicker\bootstrap-datepicker.css" />
     <Content Include="css\plugins\bootstrap-datepicker\bootstrap-datepicker.min.css" />
     <Content Include="css\plugins\bootstrap-modal\bootstrap-modal.css" />
     <Content Include="css\plugins\bootstrap-modal\bootstrap-modal.min.css" />
+    <Content Include="css\plugins\bootstrap-timepicker\bootstrap-timepicker.css" />
+    <Content Include="css\plugins\bs-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="css\plugins\bs-multiselect\bootstrap-multiselect.css" />
+    <Content Include="css\plugins\datatable\datatable-bs3.css" />
+    <Content Include="css\plugins\datatable\jquery.dataTables.min.css" />
     <Content Include="css\plugins\dropzone\dropzone.css" />
     <Content Include="css\plugins\font-awesome\font-awesome.css" />
     <Content Include="css\plugins\font-awesome\font-awesome.min.css" />
@@ -163,9 +168,13 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="img\avatar_default.jpg" />
+    <Content Include="img\compare-orange.png" />
+    <Content Include="img\compare.png" />
+    <Content Include="img\excol.png" />
     <Content Include="img\loading-34.gif" />
     <Content Include="img\loading-64.gif" />
     <Content Include="img\spritemap%402x.png" />
+    <Content Include="img\spritemap.png" />
     <Content Include="img\ui-ac-spinner.gif" />
     <Content Include="js\app\app.js" />
     <Content Include="js\bootstrap\bootstrap.js" />
@@ -179,6 +188,7 @@
     <Content Include="js\finch\infuser-amd.min.js" />
     <Content Include="js\finch\koExternalTemplateEngine-amd.min.js" />
     <Content Include="js\finch\TrafficCop.min.js" />
+    <Content Include="js\helper\common.js" />
     <Content Include="js\helper\dateformat.js" />
     <Content Include="js\helper\helper-model.js" />
     <Content Include="js\helper\helper.js" />

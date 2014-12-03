@@ -49,8 +49,17 @@ define("ko-binding",['knockout','helper'],function(ko,helper) {
             $(element).on("autocompleteselect",function(event,ui) {
                 checkSelect(element);
             });
+
         },
         update: function(element,valueAccessor,allBindingsAccessor,viewModel) {
+            var obj=valueAccessor(),allBindings=allBindingsAccessor();
+            var $uiAjaxCombo=$(element).parents(".ui-ajax-combo:first");
+            if(obj.inputValue==undefined)
+                obj.inputValue="";
+            if($.trim(obj.inputValue)=="")
+                $uiAjaxCombo.removeClass("ui-autocomplete-selected")
+            else
+                $uiAjaxCombo.addClass("ui-autocomplete-selected")
         }
     }
     ko.bindingHandlers.autoComplete={
@@ -62,6 +71,19 @@ define("ko-binding",['knockout','helper'],function(ko,helper) {
                 collision: "flip"
             }
             $(element).autoCompleteEx(obj);
+        },
+        update: function(element,valueAccessor,allBindingsAccessor,viewModel) {
+        }
+    }
+
+    ko.bindingHandlers.timePicker={
+        init: function(element,valueAccessor,allBindingsAccessor,viewModel) {
+            var obj=valueAccessor(),allBindings=allBindingsAccessor();
+            $(element).timepicker(obj);
+            $(element).timepicker().on('changeTime.timepicker',function(e) {
+                if(obj.onChange)
+                    obj.onChange(e);
+            });
         },
         update: function(element,valueAccessor,allBindingsAccessor,viewModel) {
         }
@@ -87,6 +109,7 @@ define("ko-binding",['knockout','helper'],function(ko,helper) {
             });
         }
     }
+
     ko.bindingHandlers.sortingTable={
         init: function(element,valueAccessor,allBindings,viewModel,bindingContext) {
             var options=ko.unwrap(valueAccessor());
@@ -135,17 +158,6 @@ define("ko-binding",['knockout','helper'],function(ko,helper) {
             $(element).select2(obj);
         },
         update: function(element,valueAccessor,allBindingsAccessor,viewModel,bindingContext) {
-        }
-    }
-    ko.bindingHandlers.fixedHeader={
-        init: function(element,valueAccessor,allBindings,viewModel,bindingContext) {
-            if(helper.isIE()==false) {
-                $(element).floatThead({
-                    "scrollingTop": helper.getScrollTop()
-                });
-            }
-        },
-        update: function(element,valueAccessor,allBindings,viewModel,bindingContext) {
         }
     }
     ko.bindingHandlers.select2Ajax={

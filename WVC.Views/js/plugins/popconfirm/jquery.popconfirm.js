@@ -53,9 +53,9 @@
 
 	PopoverConfirm.DEFAULTS={
 		message: 'Are you sure?',
-		okBtnClass: 'btn btn-primary btn-sm input-mini',
+		okBtnClass: 'btn btn-primary btn-sm input-60',
 		okBtnText: 'OK',
-		cancelBtnClass: 'btn btn-danger btn-sm input-mini m-l-10',
+		cancelBtnClass: 'btn btn-danger btn-sm input-60 m-l-10',
 		cancelBtnText: 'Cancel',
 		modalClass: '',
 		placement: 'bottom',

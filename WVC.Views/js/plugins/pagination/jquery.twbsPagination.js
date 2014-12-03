@@ -18,11 +18,10 @@
 	var TwbsPagination=function(element,options) {
 		this.$element=$(element);
 		this.options=$.extend({},$.fn.twbsPagination.defaults,options);
-		this.options.totalPages = Math.ceil(this.options.total/this.options.rowsPerPage);
-		
-		if(isNaN(this.options.totalPages))	
-			this.options.totalPages = 0;
-		////window.console.log("TwbsPagination=",this.options.total,this.options.rowsPerPage,this.options.totalPages);
+		this.options.totalPages=Math.ceil(this.options.total/this.options.rowsPerPage);
+
+		if(isNaN(this.options.totalPages))
+			this.options.totalPages=0;
 		this.init(this.options);
 	};
 
@@ -33,14 +32,14 @@
 		init: function(options) {
 			this.options=$.extend({},this.options,options);
 
-			if(this.options.startPage<1||this.options.startPage>this.options.totalPages) {
-				//throw new Error('Start page option is incorrect');
-			}
+			//if(this.options.startPage<1||this.options.startPage>this.options.totalPages) {
+			//throw new Error('Start page option is incorrect');
+			//}
 
-			if(this.options.totalPages<=0) {
-				//throw new Error('Total pages option cannot be less 1 (one)!');
-				return;
-			}
+			//if(this.options.totalPages<=0) {
+			//throw new Error('Total pages option cannot be less 1 (one)!');
+			//	return;
+			//}
 
 			if(this.options.totalPages<this.options.visiblePages) {
 				this.options.visiblePages=this.options.totalPages;
@@ -70,7 +69,7 @@
 
 			//this.$element.trigger('page',this.options.startPage);
 
-			if(this.options.onCompleted){
+			if(this.options.onCompleted) {
 				this.options.onCompleted();
 			}
 
@@ -90,10 +89,8 @@
 			this.render(this.getPages(page));
 			this.setupEvents();
 
-			////window.console.log("show fire", (new Date));
 			if(this.options.onPageClick)
 				this.options.onPageClick(page);
-			//this.$element.trigger('page',page);
 			return this;
 		},
 
@@ -212,7 +209,9 @@
 			this.$listContainer.find('.next')
                 .toggleClass('disabled',pages.currentPage===this.options.totalPages);
 
-			var status = "";
+
+
+			var status="";
 			var from=((pages.currentPage-1)*this.options.rowsPerPage+1);;
 			var to=from+this.options.rowsPerPage-1;
 			var totalRows=this.options.total;
@@ -220,8 +219,21 @@
 				to=this.options.total;
 			}
 			status="Showing "+from+" to "+to+" of "+totalRows+" entries";
-			//console.log("onRender Status=",status,this.options.onRender);
-			if(this.options.onRender){
+			if(totalRows<=0) {
+				status="";
+				this.$listContainer.find('.first')
+                .addClass('disabled');
+
+				this.$listContainer.find('.last')
+					.addClass('disabled');
+
+				this.$listContainer.find('.prev')
+					.addClass('disabled');
+
+				this.$listContainer.find('.next')
+					.addClass('disabled');
+			}
+			if(this.options.onRender) {
 				this.options.onRender(status);
 			}
 
@@ -262,20 +274,18 @@
 		var args=Array.prototype.slice.call(arguments,1);
 		var methodReturn;
 
-		////window.console.log("twbsPagination start", option);
 		var $this=$(this);
 		var data=$this.data('twbs-pagination');
 		var options=typeof option==='object'&&option;
 
 		if(data) {
 			$this.resetPaging();
-			////window.console.log("twbsPagination resetPaging");
 		}
 
 		data=$this.data('twbs-pagination');
-		if(!data) 
+		if(!data)
 			$this.data('twbs-pagination',(data=new TwbsPagination(this,options)));
-			
+
 		if(typeof option==='string') methodReturn=data[option].apply(data,args);
 
 		return (methodReturn===undefined)?$this:methodReturn;

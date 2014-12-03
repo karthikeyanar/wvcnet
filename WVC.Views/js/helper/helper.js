@@ -261,15 +261,6 @@ define("helper",function() {
             })
         }
 
-        this.generateAlertMessage = function(json) {
-            var errors = self.generateErrors(json);
-            var msg = "";
-            $.each(errors,function(i,err){
-                msg += err.ErrorMessage + "<br/>";
-            });
-            return msg;
-        }
-
         this.generateErrors=function(json) {
             var errros=[];
             if(json.ModelState) {
@@ -427,7 +418,8 @@ define("helper",function() {
             }
         }
         this.getScriptFileId=function(fileName) {
-            return fileName.replace("/js/pages/","").replace(".js","")+"_js_file";
+            fileName=fileName.replaceAll("/","_").replaceAll(".js","").replaceAll(".","").replaceAll("-","_")+"_js_file";
+            return fileName;
         }
         this.removeScript=function(files,callback) {
             $.each(files,function(i,fileName) {
@@ -455,7 +447,7 @@ define("helper",function() {
             }
         }
         this.getCSSFileId=function(fileName) {
-            return fileName.replace("/css/pages/","").replace(".css","")+"_css_file";
+            return fileName.replaceAll("/","_").replaceAll(".css","").replaceAll(".","").replaceAll("-","_")+"_css_file";
         }
         this.removeCSS=function(files,callback) {
             $.each(files,function(i,fileName) {
@@ -563,6 +555,7 @@ define("helper",function() {
                 existData.data=data;
         }
 
+        this.onInit=null;
         this.init=function() {
             self._IsIE8=!!navigator.userAgent.match(/MSIE 8.0/);
             self._IsIE9=!!navigator.userAgent.match(/MSIE 9.0/);
@@ -577,6 +570,8 @@ define("helper",function() {
             self.handleBackToTop();
             self.resizeContentHeight();
             self.ajaxSetup();
+            if(self.onInit)
+                self.onInit();
         }
     }
     helper.init();

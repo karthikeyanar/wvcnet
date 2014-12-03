@@ -26,6 +26,7 @@ define("app",["knockout","komapping","../models/AuthModel","finch","helper"],fun
 		}
 
 		this.lockOut=function() {
+            $("body").addClass("no-authorize");
 			var auth=helper.getAuth();
 			if(auth!=null) {
 				$.ajax({
@@ -58,8 +59,6 @@ define("app",["knockout","komapping","../models/AuthModel","finch","helper"],fun
 
 		self.setMy(helper.getAuth(),helper.getLS("rememberme"));
 		//this.checkAuth();
-
-
 	}
 }
 );

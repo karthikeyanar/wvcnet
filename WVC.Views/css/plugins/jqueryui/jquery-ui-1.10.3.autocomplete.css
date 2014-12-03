@@ -73,19 +73,20 @@
 	font-size: 16px;
 }
 .ui-ajax-combo .form-control {
-    border-left-width: 0;
-    border-right-width: 0;
-    padding-left: 5px;
+    border-radius: 4px 0 0 4px !important;
 }
-.ui-ajax-combo .form-control:focus {
-    border-left-width: 1px;
-    border-right-width: 1px;
+.ui-ajax-combo > .input-group-btn > .btn-default {
+    background: #eee;
+    color: #333;border-radius: 0 4px 4px 0;
+}
+.ui-ajax-combo > .input-group-btn > .btn-default > .caret {
+    margin-top: -5px;
 }
 .ui-ajax-combo .remove-value {
     color: #333;
     font-size: 16px;
     position: absolute;
-    right: 45px;
+    right: 10px;
     top: 4px;
     z-index: 2;
 	display: none;
@@ -96,6 +97,10 @@
     opacity: 0.5;
     filter:alpha(opacity=50);
 }
-.ui-autocomplete-selected .remove-value {
-	display: block;
+.ui-ajax-combo.ui-autocomplete-selected .remove-value {
+    display: block;
+}
+.ui-ajax-combo.ui-autocomplete-selected .caret {
+    opacity: 0;
+    filter: alpha(opacity=0);
 }

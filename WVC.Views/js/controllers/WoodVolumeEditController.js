@@ -9,10 +9,6 @@ define("WoodVolumeEditController",["knockout","komapping","../models/GridModel",
         this.applyPlugins=function() {
             var $editCnt=$(".page-content");
         }
-
-       
-
-
         ko.bindingHandlers.saveTo={
             init: function(element,valueAccessor,allBindings,viewModel,bindingContext) {
                 var $element=$(element);
@@ -83,10 +79,10 @@ define("WoodVolumeEditController",["knockout","komapping","../models/GridModel",
                             } else {
                                 var itemModel=new WoodVolumeItemModel();
                                 itemModel.onDelete=function() {
-                                    self.volumes.remove(itemModel);
+                                    dataFor.volumes.remove(itemModel);
                                 }
                                 komapping.fromJS(json,{},itemModel);
-                                self.model().volumes.push(itemModel);
+                                dataFor.model().volumes.push(itemModel);
                                 $(":input[type='text']",$tr).val("");
                             }
                         }
